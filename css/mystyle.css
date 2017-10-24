@@ -1,0 +1,75 @@
+@charset "utf-8";
+/*----------------------
+General css
+------------------------*/
+ 
+a {
+	text-decoration:none;
+	color:#e63636;
+}
+.btn-default{background: #5C04AE;color:#fff;}
+.btn-default:hover{background:#5C04AE; color: #f1f1f1; }
+.reg{background: #6B15A1;color:#f2f2f2;}
+.fa-telegram{font-size: 64px;color:#5C04AE;}
+.fa-cube{font-size: 64px;color:#5C04AE;}
+/*------------------------
+body css start
+--------------------------*/
+
+body{background:#075B88;}
+.wrapper{}
+
+.header{}
+.slider{} 
+
+.navbar{margin-bottom: 0px;border-radius:0px;}
+
+.centered-form{
+	margin-top: 60px;
+}
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding:8px 15px !important;
+    font-size: 18px;
+    line-height: 20px;
+}
+.containerfluid{padding-bottom: 22px;}
+.sicon{padding: 5px;}
+
+.centered-form .panel{
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}
+.regheading{text-align:center;padding:10px; margin:15px 0px 15px 0px;}
+.paddingbottom{padding-bottom: 50px;}
+/*------------------------------------
+custom menu stye
+*/
+.menu{padding-top:30px;padding-bottom: 30px;background: rgba(0,0,0,0.25);}
+.menu ul {}
+.menu ul li{border-bottom: 1px solid #ffccff;}
+.menu ul li a{color:blanchedalmond;font-size: 16px;}
+.menu ul li a:hover{color:red;}
+
+
+
+/*-------------------------------------
+footer css
+---------------------------------------*/
+.footer-wrapper{background:#065BB2;color:#fff;}
+
+.footerlast{height: 40px;background:#065BB2;color:#ffc;text-align: center;}
+.lastfooter{margin: 0 auto; padding: 10px;}
+.container{background: #B8C2D4;}
+.welcome{height: 50px; background:rgba(0,0,0,0.50);padding: 16px;color: #EA3636;}
+
+/*registration page*/
+.regmain{background: url(../img/registration.jpg);}
+.reg{background: rgba(0,0,0,0.80);padding-top: 5px;padding-bottom: 5px;}
+
+/*link and border color should be #FF1D4D 
+backgroud of color and some space #1BB093 */
+.paddingtopbottom{padding-top: 20px;padding-bottom: 20px;}
+.formwrapper{background: rgba(0,0,0,0.7);padding: 0px 20px 10px 20px;color: #fff;}
+.tbpadding{padding: 0px 20px;}

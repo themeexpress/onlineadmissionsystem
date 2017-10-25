@@ -6,18 +6,17 @@
   $password=$_POST['password'];
   $_SESSION['username']=$username;
 
-  $select=$mysqli->query("select * from registration");
+  $select=$mysqli->query("select * from registration where username='$username' AND password='$password'");
   $row=$select->fetch_assoc();
-   $user=$row['username'];
-   $pass=$row['password'];   
+    
 
-  if ( $username==$user && $password==$pass){
+  if ($row){
 
        header('location:profile.php');
     }
 
   else 
-    echo"Username or password problem";
+    echo"Username or password in incorrect";
 
 }
 

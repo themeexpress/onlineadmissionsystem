@@ -23,7 +23,7 @@
             <div class="col-md-3"><i class="fa fa-cube" aria-hidden="true"></i></i></div>
             <div class="col-md-9"><h2>Our Departments</h2>
            <ul>
-             <li>Computer Science & Engineering</li>
+             <li><a href="cse.php">Computer Science & Engineering</a></li>
              <li>Electrical and Electronics Engineering</li>
              <li>Civil Engineering</li>
              <li>Textile Engineering</li>

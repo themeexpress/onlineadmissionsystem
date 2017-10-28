@@ -40,8 +40,12 @@
      
       <ul class="nav navbar-nav navbar-right">
         <li><a href="http://localhost/Onlineadminssionsystem/">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Academic</a></li>
+        <li><a href="#">Admission</a></li>
         <li><a href="#"><i class="fa fa-user sicon" aria-hidden="true"></i>Sign In</a></li>
          <li><a href="#"><i class="fa fa-sign-in sicon" aria-hidden="true"></i>Sign Up</a></li>
+        <li><a href="#">Contact Us</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

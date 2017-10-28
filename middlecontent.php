@@ -24,7 +24,7 @@
             <div class="col-md-9"><h2>Our Departments</h2>
            <ul>
              <li><a href="cse.php">Computer Science & Engineering</a></li>
-             <li>Electrical and Electronics Engineering</li>
+             <li><a href="eee.php">Electrical and Electronics Engineering</a></li>
              <li>Civil Engineering</li>
              <li>Textile Engineering</li>
            </ul>

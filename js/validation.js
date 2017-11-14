@@ -12,11 +12,11 @@ $(function(){
 
    $("#form_username").focusout(function(){
 
-   chekc_username();
+   check_username();
 	});
    $("#form_email").focusout(function(){
 
-   chekc_email_address();
+   check_email_address();
 	});
    $("#form_password").focusout(function(){
 
@@ -28,7 +28,7 @@ $(function(){
    check_confirm_password();
 	});
 
-function chekc_username(){
+function check_username(){
 	var username_length = $("#form_username").val().length;
 	if(username_length<5|| username_length>8){
 		$("#username_error_message").html("Username should be 5-8 character");
@@ -54,7 +54,7 @@ var password_length = $("#form_password").val().length;
 
 }
 
-function chekc_email_address(){
+function check_email_address(){
 var pattern= new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
 	if (pattern.test($("#form_email").val())){
 		$("#email_error_message").hide();
@@ -81,8 +81,27 @@ function check_confirm_password(){
 			$("#confirm_password_error_message").hide();
 		}
 
-
-
 }
+
+$("#registraion_form").submit(function(){
+
+error_username=false;
+error_password=false;
+error_confirm_password=false;
+error_email=false;
+
+check_username();
+check_password();
+check_email_address();
+check_confirm_password();
+
+if(error_username==false && error_password==false && error_confirm_password==false && error_email==false){
+return true;
+}
+else{
+	return false;
+}
+
+});
 
 });

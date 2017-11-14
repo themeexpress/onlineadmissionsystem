@@ -2,11 +2,11 @@
   session_start();
   require 'connection.php';
   if(isset($_POST['login'])){
-  $username=$_POST['username'];
+  $email=$_POST['email'];
   $password=$_POST['password'];
-  $_SESSION['username']=$username;
+  $_SESSION['email']=$email;
 
-  $select=$mysqli->query("select * from registration where username='$username' AND password='$password'");
+  $select=$mysqli->query("select * from user where email='$email' AND password='$password'");
   $row=$select->fetch_assoc();
     
 
@@ -16,7 +16,7 @@
     }
 
   else 
-    echo"Username or password in incorrect";
+    echo "Username or password in incorrect";
 
 }
 
@@ -77,8 +77,8 @@
                   <div class="col-sm-8">
 
                     <div class="input-group">
-                      <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user" aria-hidden="true"></i></span>
-                      <input type="text" class="form-control" name="username" placeholder="Username" aria-describedby="basic-addon1">
+                      <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                      <input type="text" class="form-control" name="email" placeholder="Email" aria-describedby="basic-addon1">
                     </div>
                   </div>
                 </div>
@@ -87,7 +87,7 @@
                   <div class="col-sm-8">
                     <div class="input-group">
                       <span class="input-group-addon" id="basic-addon1"><i class="fa fa-lock" aria-hidden="true"></i></span>
-                        <input type="password" class="form-control" name="password" placeholder="Username" aria-describedby="basic-addon1"><br/>
+                        <input type="password" class="form-control" name="password" placeholder="Password" aria-describedby="basic-addon1"><br/>
                     </div>
                     
                   </div>

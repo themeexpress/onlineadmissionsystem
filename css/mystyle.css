@@ -77,3 +77,8 @@ backgroud of color and some space #1BB093 */
 input {
     color:#000000;
 }
+.mybox {
+    box-shadow: 2px 2px 3px #467ff2;
+    padding-bottom: 12px;
+    margin-bottom: 15px;
+}

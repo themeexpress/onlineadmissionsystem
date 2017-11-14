@@ -18,6 +18,29 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script type="text/javascript">
+
+//   var password = document.getElementById("password")
+//   , confirm_password = document.getElementById("confirm_password");
+
+// function validatePassword(){
+//   if(password.value != confirm_password.value) {
+//     confirm_password.setCustomValidity("Passwords Don't Match");
+//   } else {
+//     confirm_password.setCustomValidity('');
+//   }
+// }
+
+// password.onchange = validatePassword();
+// confirm_password.onkeyup = validatePassword();
+
+function test(){
+  //if(getElementById('#password').lenght>6)
+ 
+    alert("al least 6");
+//}
+ 
+</script>  
 </head>
 <body> 
 <div class="container">

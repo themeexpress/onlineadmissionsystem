@@ -65,11 +65,15 @@ footer css
 .welcome{height: 50px; background:rgba(0,0,0,0.50);padding: 16px;color: #EA3636;}
 
 /*registration page*/
-.regmain{background: url(../img/registration.jpg);}
+.regmain{background: url(../img/regbg.jpg);}
 .reg{background: rgba(0,0,0,0.80);padding-top: 5px;padding-bottom: 5px;}
 
 /*link and border color should be #FF1D4D 
 backgroud of color and some space #1BB093 */
 .paddingtopbottom{padding-top: 20px;padding-bottom: 20px;}
 .formwrapper{background: rgba(0,0,0,0.7);padding: 0px 20px 10px 20px;color: #fff;}
-.tbpadding{padding: 0px 20px;}
+.tbpadding{padding: 30px 20px;}
+.error_from{color: red;}
+input {
+    color:#000000;
+}

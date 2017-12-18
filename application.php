@@ -36,7 +36,7 @@
 			  	</div>
 			  	<div class="col-md-6" style="padding-top: 30px;">
 			  		<div class="form-group">
-			  			<label for="email">Gender</label>
+			  			<label for="Gender">Gender</label>
 					    <label class="radio-inline">
 						 <input type="radio" value="male" name="sex">Male
 						</label>
@@ -56,21 +56,21 @@
 						 <div class="form-group">			   
 						<label>Nationality </label>
 						<label class="radio-inline">
-						 <input type="checkbox" value="Bangladeshi" name="country">Bangladeshi
+						 <input type="radio" value="Bangladeshi" name="country">Bangladeshi
 						</label>
 						<label class="checkbox-inline">
-						 <input type="checkbox" value="others" name="country">Others
+						 <input type="radio" value="others" name="country">Others
 						</label>								
 					    </div>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="maritalstatus">Marital Status</label>
-						    <label class="checkbox-inline">
-							 <input type="checkbox" value="single" name="maritalstatus">Single
+						    <label class="radio-inline">
+							 <input type="radio" value="single" name="maritalstatus">Single
 							</label>
-							<label class="checkbox-inline">
-							<input type="checkbox" value="married" name="maritalstatus">Married
+							<label class="radio-inline">
+							<input type="radio" value="married" name="maritalstatus">Married
 							</label>			   								
 			  			</div>
 					</div>
@@ -81,11 +81,11 @@
 			  	<div class="form-group">
 				  <label for="sel1">First Choice</label>
 				  <select class="form-control" id="fistchoice">
-				    <option>CSE</option>
-				    <option>EEE</option>
-				    <option>Civil</option>
-				    <option>Mechanical</option>
-				    <option>Textile</option>
+				    <option value="CSE">CSE</option>
+				    <option value="EEE">EEE</option>
+				    <option value="Civil">Civil</option>
+				    <option value="Mechanical">Mechanical</option>
+				    <option value="Textile">Textile</option>
 				  </select>
 				</div>
 			  </div>		  
@@ -94,11 +94,11 @@
 				<div class="form-group">
 				  <label for="sel1">Second Choice</label>
 				  <select class="form-control" id="fistchoice">
-				    <option>CSE</option>
-				    <option>EEE</option>
-				    <option>Civil</option>
-				    <option>Mechanical</option>
-				    <option>Textile</option>
+				    <option value="CSE">CSE</option>
+				    <option value="EEE">EEE</option>
+				    <option value="Civil">Civil</option>
+				    <option value="Mechanical">Mechanical</option>
+				    <option value="Textile">Textile</option>
 				  </select>
 				</div>
 				</div>	
@@ -107,11 +107,11 @@
 				 <div class="form-group">
 				  <label for="sel1">Third Choice</label>
 				  <select class="form-control" id="fistchoice">
-				    <option>CSE</option>
-				    <option>EEE</option>
-				    <option>Civil</option>
-				    <option>Mechanical</option>
-				    <option>Textile</option>
+				   <option value="CSE">CSE</option>
+				    <option value="EEE">EEE</option>
+				    <option value="Civil">Civil</option>
+				    <option value="Mechanical">Mechanical</option>
+				    <option value="Textile">Textile</option>
 				  </select>
 				</div>
 				</div>	
@@ -170,12 +170,13 @@
 				<div class="form-group">
 				<table>
 				<tr>
-				<td><label for="sel1">Name</label></td>
-				 <td> <select class="form-control" id="fistchoice">
-				    <option>SSC</option>
-				    <option>Dhakhil</option>
-				    <option>Vocational</option>
-				    <option>Others</option>				    
+				<td><label for="name">Name</label></td>
+				 <td> 
+				 	<select class="form-control" id="ssc">
+				    <option value="ssc">SSC</option>
+				    <option value="Dhakhil">Dhakhil</option>
+				    <option value="Vocational">Vocational</option>
+				    <option value="others">Others</option>				    
 				  </select>
 				  </td></tr>				
 				  
@@ -193,28 +194,25 @@
 				 <table>
 				 	<tr>
 				 	<td><label for="sel1">Name</label></td><td>
-				  <select class="form-control" id="hsc">
-				    <option>SSC</option>
-				    <option>Dhakhil</option>
-				    <option>Vocational</option>
-				    <option>Diploma</option>
-				    <option>Others</option>				    
+				  <select class="form-control" id="hsc">				    
+				     <option value="hsc">SSC</option>
+				    <option value="alim">Alim</option>
+				    <option value="Vocational">Vocational</option>
+				    <option value="others">Others</option>				    
 				  </select>
 				  </td>
 				  </tr>
 				  <tr>
-				  <td><label>Roll</label></td><td><input type="text" name="hscroll"></td>			  
+				  <td><label>Roll</label></td><td><input type="text" name="hscroll"></td>	  
 				  </tr>
 				   <tr>
 				   <td><label>CGPA</label></td><td><input type="text" name="hsccgpa"></td>	  
 				  </tr>
 				   <tr>
-				   <td><label>Passing Year</label></td><td><input type="text" name="hscpyear"></td>
-				  
+				   <td><label>Passing Year</label></td><td><input type="text" name="hscpyear"></td>  
 				  </tr>
 				   <tr>
-				   <td><label>Board</label></td><td><input type="text" name="hscboard"></td>
-				  
+				   <td><label>Board</label></td><td><input type="text" name="hscboard"></td>		  
 				  </tr>
 				   <tr>
 				   <td style="margin-right: 40px;"><label>Name of The Institute</label></td><td> <input type="text" name="hscshool"></td>

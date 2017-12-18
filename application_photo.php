@@ -4,7 +4,12 @@
  	<div class="row">
  	<p style="margin: 40px"></p>
  		<div class="col-md-4">
-	 		<?php include('profilenav.php');?>				
+	 		<ul class="nav nav-pills nav-stacked">			
+				<li role="presentation" style="background: #4c87b9;"><a href="profile.php">Profile</a></li>
+				<li class="active"  role="presentation"> <a href="application.php">Application Form</a></li>
+				<li style="background: #4c87b9;" role="presentation"><a href="status.php">Status</a></li> 
+				<li style="background: #4c87b9;" role="presentation"><a href="paymenthistory.php">Payment History</a></li>		 				
+			</ul> 				
  		</div>
  		<div class="col-md-8">
  		<p style>

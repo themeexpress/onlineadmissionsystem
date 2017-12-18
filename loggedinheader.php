@@ -42,7 +42,7 @@
      
       <ul class="nav navbar-nav navbar-right">
          <li><a href=""><i class="fa fa-user sicon" aria-hidden="true"></i>
-         <?php echo $_SESSION['username'];?></a></li>
+         <?php echo $_SESSION['email'];?></a></li>
          <li><a href="Logout.php"><i class="fa fa-sign-in sicon" aria-hidden="true"></i>Logout</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->

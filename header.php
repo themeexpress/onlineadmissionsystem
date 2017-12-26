@@ -63,11 +63,11 @@ function test(){
      
       <ul class="nav navbar-nav navbar-right">
         <li><a href="http://localhost/Onlineadminssionsystem/">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Academic</a></li>
-        <li><a href="#">Admission</a></li>
-        <li><a href="#"><i class="fa fa-user sicon" aria-hidden="true"></i>Sign In</a></li>
-         <li><a href="#"><i class="fa fa-sign-in sicon" aria-hidden="true"></i>Sign Up</a></li>
+        <li><a href="aboutus.php">About Us</a></li>
+        <li><a href="academic.php">Academic</a></li>
+        <li><a href="adminssion.php">Admission</a></li>
+        <li><a href="./dashboard/index.php"><i class="fa fa-user sicon" aria-hidden="true"></i>Sign In</a></li>
+         <li><a href="./dashboard/index.php"><i class="fa fa-sign-in sicon" aria-hidden="true"></i>Sign Up</a></li>
         <li><a href="#">Contact Us</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->

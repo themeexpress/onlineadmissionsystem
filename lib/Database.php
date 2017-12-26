@@ -42,21 +42,16 @@ Class Database{
 	// Insert data
 	public function insert($query){
 	$insert_row = $this->link->query($query) or die($this->link->error.__LINE__);
-	if($insert_row){
-		header("Location: index.php?msg=".urlencode('Data Inserted successfully.'));
-		exit();
-	} else {
+	if(!$insert_row){
 		die("Error :(".$this->link->errno.")".$this->link->error);
-	}
+	} 		
+	
   }
   
     // Update data
   	public function update($query){
 	$update_row = $this->link->query($query) or die($this->link->error.__LINE__);
-	if($update_row){
-		header("Location: index.php?msg=".urlencode('Data Updated successfully.'));
-		exit();
-	} else {
+	if(!$update_row){		
 		die("Error :(".$this->link->errno.")".$this->link->error);
 	}
   }
@@ -64,10 +59,7 @@ Class Database{
   // Delete data
    public function delete($query){
 	$delete_row = $this->link->query($query) or die($this->link->error.__LINE__);
-	if($delete_row){
-		header("Location: index.php?msg=".urlencode('Data Deleted successfully.'));
-		exit();
-	} else {
+	if(!$delete_row){		
 		die("Error :(".$this->link->errno.")".$this->link->error);
 	}
   }

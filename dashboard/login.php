@@ -1,18 +1,26 @@
 <?php 
-session_start();
-require_once "../lib/Database.php"; 
-    if(isset($_POST['submit'])){
-        $email=$_POST['email'];
-        $password=md5($_POST['password']);
-        $_SESSION['email']=$email;
+include '../lib/Session.php';
+Session::init();
+
+include '../lib/format.php'; 
+include '../lib/Database.php';
+
+ $db = new Database();
+ $fm = new Format();
+
+
+    // if(isset($_POST['submit'])){
+    //     $email=$_POST['email'];
+    //     $password=md5($_POST['password']);
+    //     $_SESSION['email']=$email;
         
-        $DB= new Database();
-        $lquery="select * from user where email='$email' and password='$password'";
-        $logincheck= $DB->select($lquery); 
-        header('Location: userprofile.php');
+       
+    //     $lquery="select * from user where email='$email' and password='$password'";
+    //     $logincheck= $DB->select($lquery); 
+    //     header('Location: userprofile.php');
       
 
-    }
+    // }
 
 ?>
 <!DOCTYPE html>
@@ -44,9 +52,40 @@ require_once "../lib/Database.php";
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
+								<?php 
+									if ($_SERVER['REQUEST_METHOD']=='POST') {
+										$email = $fm->validation($_POST['email']);
+										$password = $fm->validation(md5($_POST['password']));
+										$email = mysqli_real_escape_string($db->link,$email);
+										$password = mysqli_real_escape_string($db->link,$password);
+
+										$query = "select * from user where email='$email' and password='$password' ";
+										$result= $db->select($query);
+										if ($result!=false) {
+											$value= mysqli_fetch_array($result);
+											$row =mysqli_num_rows($result);
+											if ($row>0) {
+												Session::set('login',true);
+												Session::set('email',$value['email']);
+												Session::set('username',$value['username']);
+												header('location: userprofile.php');
+
+											}else{
+												echo "<span style='color:red;font-size:18px;'>NO result Found!!</span>";
+
+											}
+										}else{
+											echo "<span style='color:red;font-size:18px;'>Email or password not Matched!!</span>";
+										}
+
+
+
+									}
+
+								?>
 								<form id="login-form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" role="form" style="display: block;">
 									<div class="form-group">
-										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="">
+										<input type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="">
 									</div>
 									<div class="form-group">
 										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">

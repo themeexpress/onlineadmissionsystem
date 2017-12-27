@@ -1,16 +1,13 @@
-<?php include('loggedinheader.php');?>
+<?php include "inc/header.php" ;?>
 
- <div class="container">
- 	<div class="row">
- 		<div class="col-md-3" style="margin-top: 80px;">
-	 		<ul class="nav nav-pills nav-stacked">			
-				<li role="presentation" style="background: #4c87b9;"><a href="profile.php">Profile</a></li>
-				<li class="active"  role="presentation"> <a href="application.php">Application Form</a></li>
-				<li style="background: #4c87b9;" role="presentation"><a href="status.php">Status</a></li> 
-				<li style="background: #4c87b9;" role="presentation"><a href="paymenthistory.php">Payment History</a></li>		 				
-			</ul> 	
- 		</div>
- 		<div class="col-md-9">
+        <div class="grid_10">
+		
+            <div class="box round first grid">
+                <h2> Dashbord</h2>
+                <div class="block">               
+                  Welcome admin panel        
+                </div>
+               
  		<h1 class="text-center">Application Form</h1>
  		<hr/>
  		 <form action="applictionrpocess.php" method="POST">
@@ -235,10 +232,15 @@
 			  </div>
 			  
 			</form>
- 		</div>
+ 		
  	</div>
- </div>
-  
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+   <?php include "inc/footer.php";?>
 
-  
-<?php include('footer.php');?>
+

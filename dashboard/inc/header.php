@@ -1,9 +1,6 @@
 <?php session_start();
 
 //redirect to login page who are not logged
-if(!isset($_SESSION['username'])){
-    header('Location: ./index.php');
-}
 
 include "../lib/Database.php";
 ?>

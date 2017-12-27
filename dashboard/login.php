@@ -8,21 +8,8 @@ include '../lib/Database.php';
  $db = new Database();
  $fm = new Format();
 
-
-    // if(isset($_POST['submit'])){
-    //     $email=$_POST['email'];
-    //     $password=md5($_POST['password']);
-    //     $_SESSION['email']=$email;
-        
-       
-    //     $lquery="select * from user where email='$email' and password='$password'";
-    //     $logincheck= $DB->select($lquery); 
-    //     header('Location: userprofile.php');
-      
-
-    // }
-
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -75,7 +62,7 @@ include '../lib/Database.php';
 
 											}
 										}else{
-											echo "<span style='color:red;font-size:18px;'>Email or password not Matched!!</span>";
+											echo "<span style='color:red;font-size:18px;text-align:center;'>Email or password not Matched!!</span>";
 										}
 
 

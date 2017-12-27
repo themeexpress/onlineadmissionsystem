@@ -7,6 +7,7 @@
                 <div class="block">               
                   Welcome admin panel        
                 </div>
+                
             </div>
         </div>
         <div class="clear">

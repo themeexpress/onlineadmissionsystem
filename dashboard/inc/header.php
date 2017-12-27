@@ -1,8 +1,9 @@
-<?php session_start();
+<?php
 
-//redirect to login page who are not logged
-
+include "../lib/Session.php";
+Session::checkSession();
 include "../lib/Database.php";
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,6 +16,7 @@ include "../lib/Database.php";
     <link rel="stylesheet" type="text/css" href="css/layout.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="css/nav.css" media="screen" />
     <link href="css/table/demo_page.css" rel="stylesheet" type="text/css" />
+    
     <!-- BEGIN: load jquery -->
     <script src="js/jquery-1.6.4.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="js/jquery-ui/jquery.ui.core.min.js"></script>
@@ -49,13 +51,22 @@ include "../lib/Database.php";
 					<h1>Online Admission System</h1>
 					
 				</div>
+
+                <?php
+
+                if (isset($_GET['action']) && $_GET['action'] == "logout") {
+                    Session::destroy();
+
+                }
+
+                ?>
                 <div class="floatright">
                     <div class="floatleft">
                         <img src="img/img-profile.jpg" alt="Profile Pic" /></div>
                     <div class="floatleft marginleft10">
                         <ul class="inline-ul floatleft">
-                            <li>Hello User Name ?></li>
-                            <li><a href="logout.php">Logout</a></li>
+                            <li>< Hello ></li>
+                            <li><a href="?action=logout">Logout</a></li>
                         </ul>
                     </div>
                 </div>
@@ -69,9 +80,9 @@ include "../lib/Database.php";
             <ul class="nav main">
                 <li class="ic-dashboard"><a href="admin.php"><span>Dashboard</span></a> </li>
                 <li class="ic-form-style"><a href="profile.php"><span>User Profile</span></a></li>
-				<li class="ic-typography"><a href="changepassword.php"><span>Change Password</span></a></li>
-				<li class="ic-grid-tables"><a href="inbox.php"><span>Inbox</span></a></li>
-                <li class="ic-charts"><a href="http://localhost/blog-with-oop/index.php"><span>Visit Website</span></a></li>
+				<li class="ic-typography"><a href=""><span>Change Password</span></a></li>
+				<li class="ic-grid-tables"><a href=""><span>Inbox</span></a></li>
+                <li class="ic-charts"><a href=""><span>Visit Website</span></a></li>
             </ul>
         </div>
         <div class="clear">
@@ -82,31 +93,12 @@ include "../lib/Database.php";
                     <ul class="section menu">
                         <li><a class="menuitem">Site Option</a>
                             <ul class="submenu">
-                                <li><a href="titleslogan.php">Your Profile</a></li>
+                                <li><a href="title.php">Your Profile</a></li>
                                 <li><a href="application.php">Application</a></li>
-                                <li><a href="status.php">Status</a></li>
-                                
+                                <li><a href="status.php">Status</a></li>                       
                             </ul>
-                        </li>
-						
-                         <li><a class="menuitem">Pages</a>
-                            <ul class="submenu">
-                                <li><a href="addpage.php">Add New page</a></li>
-                                <li><a href="pagelist.php">Page List</a></li>
-                            </ul>
-                        </li>
-                        <li><a class="menuitem">Category</a>
-                            <ul class="submenu">
-                               <li><a href="addcat.php">Add New Category</a> </li>
-                                <li><a href="catlist.php">Category List</a> </li>
-                            </ul>
-                        </li>
-                        <li><a class="menuitem">Posts</a>
-                            <ul class="submenu">
-                                 <li><a href="addpost.php">Add Post</a> </li>
-                                <li><a href="postlist.php">Post List</a> </li>
-                            </ul>
-                        </li>
+                        </li>						
+                        
                     </ul>
                 </div>
             </div>

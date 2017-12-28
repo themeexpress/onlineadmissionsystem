@@ -67,7 +67,7 @@ function test(){
         <li><a href="academic.php">Academic</a></li>
         <li><a href="adminssion.php">Admission</a></li>
         <li><a href="./dashboard/index.php"><i class="fa fa-user sicon" aria-hidden="true"></i>Sign In</a></li>
-         <li><a href="./dashboard/index.php"><i class="fa fa-sign-in sicon" aria-hidden="true"></i>Sign Up</a></li>
+         <li><a href="./dashboard/login.php"><i class="fa fa-sign-in sicon" aria-hidden="true"></i>Sign Up</a></li>
         <li><a href="#">Contact Us</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->

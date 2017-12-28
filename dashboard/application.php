@@ -69,7 +69,7 @@
 					  			</div>
 							</div>
 						</div>			  			   
-					  <div class="row" style="border: 2px solid #a1a1a1;padding: 10px;margin-bottom: 10px;">
+					  <div class="row" style="border: 1px solid #a1a1a1;padding: 10px;margin:0px;margin-bottom: 15px;">
 						<legend align="center"> CHOICE YOUR SUBJECT</legend>
 					  <div class="col-md-4">
 					  	<div class="form-group">
@@ -112,7 +112,7 @@
 						 
 						</div><!--//rowdiv-->
 						
-						<div class="row" style="border: 2px solid #a1a1a1;padding: 10px;">
+						<div class="row" style="border: 1px solid #a1a1a1;padding: 10px;margin:0px;margin-bottom: 15px;">
 						<legend align="center"> DETAILS ADDRESS</legend>
 				
 							<div class="col-md-6">
@@ -157,7 +157,7 @@
 							</div>
 						</fieldset>
 						</div>
-						<div class="row" style="border: 2px solid #a1a1a1;padding: 10px;margin-top: 10px;">
+						<div class="row" style="border: 1px solid #a1a1a1;padding: 10px;margin:0px;margin-bottom: 15px;">
 						<legend align="center"> EDUCATONAL DETAILS</legend>
 						
 					   <div class="col-md-6">
@@ -222,7 +222,7 @@
 					  <div class="row" style="margin: 20px;">
 					  	<div class="col-md-4"></div>
 						<div class="col-md-4">
-							<button style="width: 50%;" type="submit" class="btn btn-default btn-lg" name="submit">Submit</button>
+							<button style="width: 100%;text-align: center;padding: 4px;  background: #204562;color: #fff;" type="submit" class="btn btn-default btn-lg" name="submit">Submit</button>
 						</div>
 						<div class="col-md-4"></div>
 					    

@@ -54,6 +54,7 @@ include '../lib/Database.php';
 											if ($row>0) {
 												Session::set('login',true);
 												Session::set('email',$value['email']);
+												Session::set('userId',$value['user_id']);
 												Session::set('username',$value['username']);
 												header('location: userprofile.php');
 

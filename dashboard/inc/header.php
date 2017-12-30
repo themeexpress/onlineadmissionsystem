@@ -66,7 +66,7 @@ include "../lib/Database.php";
                         <img src="img/img-profile.jpg" alt="Profile Pic" /></div>
                     <div class="floatleft marginleft10">
                         <ul class="inline-ul floatleft">
-                            <li>< Hello ></li>
+                            <li>Hi, <?php echo Session::get('username');?></li>
                             <li><a href="?action=logout">Logout</a></li>
                         </ul>
                     </div>
@@ -96,6 +96,7 @@ include "../lib/Database.php";
                             <ul class="submenu">
                                 <li><a href="title.php">Your Profile</a></li>
                                 <li><a href="application.php">Application</a></li>
+                                <li><a href="application_photo.php">Application2</a></li>
                                 <li><a href="status.php">Status</a></li>                       
                             </ul>
                         </li>						

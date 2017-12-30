@@ -27,10 +27,13 @@ class Session
 		}
 	}
 
-public static function destroy(){
-	session_destroy();
-	header('location:login.php');
-	
+	public static function destroy(){
+		session_destroy();
+		header('location:login.php');
+		
+		}
+	public static function testo(){
+		return "I am connected";
 	}
 
 

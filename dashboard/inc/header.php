@@ -3,6 +3,10 @@
 include "../lib/Session.php";
 Session::checkSession();
 include "../lib/Database.php";
+include "../lib/format.php";
+
+$db = new Database();
+$fm = new Format();
 
 ?>
 <!DOCTYPE html>

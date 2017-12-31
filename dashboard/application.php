@@ -18,13 +18,13 @@
 							$name 			= $fm->validation($_POST['name']);
 							$father_name 	= $fm->validation($_POST['father_name']);
 							$mother_name 	= $fm->validation($_POST['mother_name']);
-							$data_of_birth 	= $fm->validation($_POST['data_of_birth']);
-							$gender 		= $fm->validation($_POST['gender']);
-							$nationality 	= $fm->validation($_POST['nationality']);
-							$maritalstatus 	= $fm->validation($_POST['maritalstatus']);
-							$first_choice 	= $fm->validation($_POST['first_choice']);
-							$second_choice 	= $fm->validation($_POST['second_choice']);
-							$third_choice 	= $fm->validation($_POST['third_choice']);
+							$date_of_birth 	= $_POST['date_of_birth'];
+							$gender 		= $_POST['gender'];
+							$nationality 	= $_POST['nationality'];
+							$maritalstatus 	= $_POST['maritalstatus'];
+							$first_choice 	= $_POST['first_choice'];
+							$second_choice 	= $_POST['second_choice'];
+							$third_choice 	= $_POST['third_choice'];
 
 							//This data will go to permanent address table
 							$careof 			= $fm->validation($_POST['careof']);
@@ -62,7 +62,7 @@
 							$institute 			= $fm->validation($_POST['institute']);
 
 							if ($name 		=="" || $father_name 	=="" || 
-							$mother_name 	=="" || $data_of_birth 	=="" ||
+							$mother_name 	=="" || $date_of_birth 	=="" ||
 							$gender 		=="" || $nationality 	=="" || 
 							$maritalstatus 	=="" ||	$first_choice 	=="" || 
 							$second_choice 	=="" ||	$third_choice 	=="" || 
@@ -85,9 +85,8 @@
 
 								//Query for Applicaiton Table
 
-							$appquery = "INSERT INTO application1 (
-								user_id,name,father_name,mother_name,date_of_birth,gender,nationality,maritalstatus,first_choice,second_choice,third_choice)
-								VALUES('$userId','$name','$father_name','$mother_name','$data_of_birth','$gender','$nationality','$maritalstatus',
+							$appquery = "INSERT INTO application1 (user_id, name,father_name, mother_name, date_of_birth, gender, nationality, maritalstatus, first_choice,second_choice,third_choice)
+								VALUES('$userId','$name','$father_name','$mother_name','$date_of_birth','$gender','$nationality','$maritalstatus',
 								'$first_choice','$second_choice','$third_choice')";
 
 								// Permanent address query
@@ -121,8 +120,6 @@
 								echo "All data inserted successfully";
 
 
-
-
 							}
 
 
@@ -150,7 +147,7 @@
 					  	<div class="col-md-6">
 					  		<div class="form-group">
 						    <label for="data_of_birth">Date of Birth<span style="color:red;font-size: 18px;">*</span></label>
-						    <input type="date" class="form-control" id="data_of_birth" name="data_of_birth">
+						    <input type="date" class="form-control" id="date_of_birth" name="date_of_birth">
 					  		</div>
 					  	</div>
 					  	<div class="col-md-6" style="padding-top: 30px;">
@@ -404,7 +401,7 @@
 					  
 					</form>
  		
- 	</div>
+ 			</div>
             </div>
         </div>
         <div class="clear">

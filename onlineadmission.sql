@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 28, 2017 at 01:53 PM
+-- Generation Time: Dec 31, 2017 at 03:50 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.0.21
 
@@ -38,6 +38,38 @@ CREATE TABLE `address_meta` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `application1`
+--
+
+CREATE TABLE `application1` (
+  `reg_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `name` varchar(150) NOT NULL,
+  `father_name` varchar(150) NOT NULL,
+  `mother_name` varchar(100) NOT NULL,
+  `date_of_birth` datetime NOT NULL,
+  `app_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `gender` varchar(55) NOT NULL,
+  `nationality` varchar(55) NOT NULL,
+  `maritalstatus` varchar(55) NOT NULL,
+  `first_choice` varchar(50) NOT NULL,
+  `second_choice` varchar(50) NOT NULL,
+  `third_choice` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `application1`
+--
+
+INSERT INTO `application1` (`reg_id`, `user_id`, `name`, `father_name`, `mother_name`, `date_of_birth`, `app_date`, `gender`, `nationality`, `maritalstatus`, `first_choice`, `second_choice`, `third_choice`) VALUES
+(1, 8, 'habibur Rahman', 'Habibur Rahman', 'Habiba khatun', '1999-06-23 00:00:00', '2017-12-31 09:54:13', 'male', 'Bangladeshi', 'single', 'EEE', 'Civil', 'Mechanical'),
+(2, 8, 'habibur Rahman', 'Habibur Rahman', 'Habiba khatun', '1999-06-23 00:00:00', '2017-12-31 10:06:36', 'male', 'Bangladeshi', 'single', 'EEE', 'Civil', 'Mechanical'),
+(3, 8, 'Sanjoy Kumar', 'Sanjoy Father', 'Sonjay mother', '1997-06-06 00:00:00', '2017-12-31 11:20:38', 'male', 'Bangladeshi', 'married', 'Mechanical', 'EEE', 'Civil'),
+(4, 8, 'Sanjoy Kumar nath', 'Ariful Nath', 'dfdgf gsd', '2015-06-17 00:00:00', '2017-12-31 14:44:01', 'male', 'Bangladeshi', 'single', 'Civil', 'Textile', 'CSE');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `education_meta`
 --
 
@@ -57,12 +89,37 @@ CREATE TABLE `education_meta` (
 CREATE TABLE `hsc` (
   `hsc_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `degree_Name` varchar(200) NOT NULL,
+  `degree_name` varchar(200) NOT NULL,
   `roll` int(11) NOT NULL,
+  `subject` varchar(200) NOT NULL,
   `passing_year` year(4) NOT NULL,
   `cgpa` float NOT NULL,
-  `institute` text NOT NULL,
-  `board` varchar(200) NOT NULL
+  `board` varchar(255) NOT NULL,
+  `institute` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `hsc`
+--
+
+INSERT INTO `hsc` (`hsc_id`, `user_id`, `degree_name`, `roll`, `subject`, `passing_year`, `cgpa`, `board`, `institute`) VALUES
+(1, 8, 'SSC', 9876, 'arts', 2014, 3.9, 'dhaka', 'dei'),
+(2, 8, 'Vocational', 34567, 'arts', 2015, 3.6, 'BTEB', 'MKB'),
+(3, 8, 'hsc', 23466, 'science', 2015, 4.45, 'Dhaka', 'dfdfdfd');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `images`
+--
+
+CREATE TABLE `images` (
+  `img_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `profile_pic` varchar(200) NOT NULL,
+  `signature` varchar(255) NOT NULL,
+  `ssc_transcript` varchar(200) NOT NULL,
+  `hsc_transcript` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -74,12 +131,23 @@ CREATE TABLE `hsc` (
 CREATE TABLE `permanent_address` (
   `permanent_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
+  `careof` varchar(255) NOT NULL,
   `houseorvillage` text NOT NULL,
   `post_office` varchar(255) NOT NULL,
   `police_station` varchar(255) NOT NULL,
   `zip_code` int(11) NOT NULL,
   `district` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `permanent_address`
+--
+
+INSERT INTO `permanent_address` (`permanent_id`, `user_id`, `careof`, `houseorvillage`, `post_office`, `police_station`, `zip_code`, `district`) VALUES
+(1, 8, 'dfdf', 'dfdfdf', 'dfdfd', 'dfdf', 2345, 'dfdf'),
+(2, 8, 'dfdf', 'dfdfdf', 'dfdfd', 'dfdf', 2345, 'dfdf'),
+(3, 8, 'ddd', 'ddd', 'fff', 'fff', 134, 'ttttt'),
+(4, 8, 'dfd dfd', 's sfdsd', 'sfddfsd', 'sfdfd', 2345, 'dcvdf');
 
 -- --------------------------------------------------------
 
@@ -89,35 +157,24 @@ CREATE TABLE `permanent_address` (
 
 CREATE TABLE `present_address` (
   `present_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `careof` varchar(255) NOT NULL,
   `houseorvillage` text NOT NULL,
   `post_office` varchar(200) NOT NULL,
   `police_station` varchar(200) NOT NULL,
   `zip_code` int(11) NOT NULL,
-  `district` varchar(200) NOT NULL,
-  `user_id` int(11) NOT NULL
+  `district` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `registration`
+-- Dumping data for table `present_address`
 --
 
-CREATE TABLE `registration` (
-  `reg_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `name` varchar(150) NOT NULL,
-  `father_name` varchar(150) NOT NULL,
-  `mother_name` varchar(100) NOT NULL,
-  `data_of_birth` datetime NOT NULL,
-  `reg_date` datetime NOT NULL,
-  `gender` varchar(55) NOT NULL,
-  `nationality` varchar(55) NOT NULL,
-  `maritalstatus` varchar(55) NOT NULL,
-  `first_choice` varchar(50) NOT NULL,
-  `second_choice` varchar(50) NOT NULL,
-  `third_choice` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `present_address` (`present_id`, `user_id`, `careof`, `houseorvillage`, `post_office`, `police_station`, `zip_code`, `district`) VALUES
+(1, 8, 'dfdf', 'dfdfdf', 'dfdfd', 'dfdf', 2345, 'dfdf'),
+(2, 8, 'dfdf', 'dfdfdf', 'dfdfd', 'dfdf', 2345, 'dfdf'),
+(3, 8, 'ddd', 'ddd', 'fff', 'fff', 134, 'ttttt'),
+(4, 8, 'dfd dfd', 's sfdsd', 'sfddfsd', 'sfdfd', 2345, 'dcvdf');
 
 -- --------------------------------------------------------
 
@@ -128,13 +185,24 @@ CREATE TABLE `registration` (
 CREATE TABLE `ssc` (
   `ssc_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
+  `degree_name` varchar(200) NOT NULL,
   `ssc_roll` int(11) NOT NULL,
+  `ssc_cgpa` varchar(20) NOT NULL,
   `subject` varchar(150) NOT NULL,
   `passing_year` year(4) NOT NULL,
-  `cgpa` float NOT NULL,
   `board` varchar(200) NOT NULL,
   `institute` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ssc`
+--
+
+INSERT INTO `ssc` (`ssc_id`, `user_id`, `degree_name`, `ssc_roll`, `ssc_cgpa`, `subject`, `passing_year`, `board`, `institute`) VALUES
+(1, 8, 'SSC', 123454, '3.9', 'arts', 2014, 'dhaka', 'dei'),
+(2, 8, 'SSC', 123454, '3.9', 'arts', 2014, 'dhaka', 'dei'),
+(3, 8, 'Vocational', 23456, '4', 'arts', 2015, 'BTEB', 'MKB'),
+(4, 8, 'hsc', 345677, '3.09', 'science', 2015, 'Dhaka', 'dfdfdfd');
 
 -- --------------------------------------------------------
 
@@ -171,6 +239,12 @@ ALTER TABLE `address_meta`
   ADD PRIMARY KEY (`address_id`);
 
 --
+-- Indexes for table `application1`
+--
+ALTER TABLE `application1`
+  ADD PRIMARY KEY (`reg_id`);
+
+--
 -- Indexes for table `education_meta`
 --
 ALTER TABLE `education_meta`
@@ -183,6 +257,12 @@ ALTER TABLE `hsc`
   ADD PRIMARY KEY (`hsc_id`);
 
 --
+-- Indexes for table `images`
+--
+ALTER TABLE `images`
+  ADD PRIMARY KEY (`img_id`);
+
+--
 -- Indexes for table `permanent_address`
 --
 ALTER TABLE `permanent_address`
@@ -193,12 +273,6 @@ ALTER TABLE `permanent_address`
 --
 ALTER TABLE `present_address`
   ADD PRIMARY KEY (`present_id`);
-
---
--- Indexes for table `registration`
---
-ALTER TABLE `registration`
-  ADD PRIMARY KEY (`reg_id`);
 
 --
 -- Indexes for table `ssc`
@@ -222,6 +296,11 @@ ALTER TABLE `user`
 ALTER TABLE `address_meta`
   MODIFY `address_id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `application1`
+--
+ALTER TABLE `application1`
+  MODIFY `reg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT for table `education_meta`
 --
 ALTER TABLE `education_meta`
@@ -230,27 +309,27 @@ ALTER TABLE `education_meta`
 -- AUTO_INCREMENT for table `hsc`
 --
 ALTER TABLE `hsc`
-  MODIFY `hsc_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `hsc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `images`
+--
+ALTER TABLE `images`
+  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `permanent_address`
 --
 ALTER TABLE `permanent_address`
-  MODIFY `permanent_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `permanent_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `present_address`
 --
 ALTER TABLE `present_address`
-  MODIFY `present_id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `registration`
---
-ALTER TABLE `registration`
-  MODIFY `reg_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `present_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `ssc`
 --
 ALTER TABLE `ssc`
-  MODIFY `ssc_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ssc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `user`
 --

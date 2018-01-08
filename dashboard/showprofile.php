@@ -10,7 +10,7 @@
                    <div class="container">
 				 	<div class="row">				 			 		
 				 		<div class="col-md-2">			     
-							<img class="img-responsive" src="img/bubtlogo.png" alt="">			 
+							<img class="img-responsive" style="border: 1px solid #ddd;padding: 10px;" src="img/bubtlogo.png" alt="">			 
 				 		</div>
 				 		<div class="col-md-7">				     
 						<h2 class="text-center">BANGLADESH UNIVERSITY OF BUSINESS AND TECHNOLOGY (BUBT)</h2>
@@ -21,14 +21,23 @@
 				 
 				 		</div>
 				 		<div class="col-md-2">	
-				 			<img class="img-responsive" src="img/profile.jpg" alt="">	     
-
+				 			<img class="img-responsive" style="border: 1px solid #ddd;padding: 10px;" src="img/profile.jpg" alt="">	   
 				 		</div>
 				 	</div>
 				 	<hr>
 				 	<div class="row">				 			 		
-				 		<div class="col-md-8">
-				      
+				 		<div class="col-md-11">
+				       <table>
+				       	<tr>
+				       		<td>Name :</td><td>Mehedi Hasan</td>
+				       	</tr>
+				       	<tr>
+				       		<td>Father's Name :</td><td>Mehedi Hasan</td>
+				       	</tr>
+				       	<tr>
+				       		<td>Mother's Name :</td><td>Mehedi Hasan</td>
+				       	</tr>
+				       </table>
 				 		</div>
 				 	</div>
  					</div>

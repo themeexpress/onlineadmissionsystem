@@ -40,7 +40,7 @@ Class Database{
 	}
 	
 	// Insert data
-	public function 2a($query){
+	public function insert($query){
 	$insert_row = $this->link->query($query) or die($this->link->error.__LINE__);
 	if(!$insert_row){
 		die("Error :(".$this->link->errno.")".$this->link->error);

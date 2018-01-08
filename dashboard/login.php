@@ -16,12 +16,17 @@ include '../lib/Database.php';
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/mystyle.css">
-	<script type="text/javascript script" src="js/bootstrap.min.js"></script>
-	
+	<script type="text/javascript script" src="js/bootstrap.min.js"></script>	
 
 </head>
 <body>
-<div class="container">
+	<div class="container-fluid">
+		<div class="row">
+			<img class="img-responsive" src="img/bubtbanner.png">
+		</div>
+	
+
+<div class="container formdiv">
     	<div class="row">
 			<div class="col-md-6 col-md-offset-3">
 				<div class="panel panel-login">
@@ -65,8 +70,6 @@ include '../lib/Database.php';
 										}else{
 											echo "<span style='color:red;font-size:18px;text-align:center;'>Email or password not Matched!!</span>";
 										}
-
-
 
 									}
 
@@ -125,7 +128,8 @@ include '../lib/Database.php';
 				</div>
 			</div>
 		</div>
-	</div>
+</div>
+</div>
 	<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
 	<script type="text/javascript" src="js/myjs.js"></script>
 </body>

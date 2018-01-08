@@ -43,7 +43,7 @@
 							$district 			= $fm->validation($_POST['district']);
 
 							//THIS DATA WILL SSC TABLE//
-							$degree_name 		= $fm->validation($_POST['degree_name']);
+							$sscdegree_name 		= $fm->validation($_POST['sscdegree_name']);
 							$ssc_roll 			= $fm->validation($_POST['ssc_roll']);
 							$ssc_cgpa 			= $fm->validation($_POST['ssc_cgpa']);
 							$subject 			= $fm->validation($_POST['subject']);
@@ -53,7 +53,7 @@
 
 							//THESE DATA WILL GO HSC TABLE						
 							
-							$degree_name 		= $fm->validation($_POST['degree_name']);
+							$hscdegree_name 		= $fm->validation($_POST['hscdegree_name']);
 							$roll 				= $fm->validation($_POST['roll']);
 							$subject 			= $fm->validation($_POST['subject']);
 							$passing_year 		= $fm->validation($_POST['passing_year']);	
@@ -105,12 +105,12 @@
 								//ssc
 								$ssc_query ="INSERT INTO 
 								ssc (user_id, degree_name,ssc_roll,ssc_cgpa,subject,passing_year,board,institute)
-								VALUES('$userId','$degree_name','$ssc_roll','$ssc_cgpa','$subject','$passing_year','$board','$institute')";
+								VALUES('$userId','$sscdegree_name','$ssc_roll','$ssc_cgpa','$subject','$passing_year','$board','$institute')";
 
 								//Query for HSC table
 								$hsc_query ="INSERT INTO 
 								hsc (user_id,degree_name,roll,subject,passing_year,cgpa,board,institute)
-								VALUES('$userId','$degree_name','$roll','$subject','$passing_year','$cgpa','$board','$institute')";
+								VALUES('$userId','$hscdegree_name','$roll','$subject','$passing_year','$cgpa','$board','$institute')";
 
 								$appresult=$db->insert($appquery);
 								$permanetresult=$db->insert($permanent_query);
@@ -292,7 +292,7 @@
 						<tr>
 						<td><label for="name">Name</label></td>
 						 <td> 
-						 <select class="form-control" id="degree_name" name="degree_name">
+						 <select class="form-control" id="degree_name" name="sscdegree_name">
 						    <option value="SSC">SSC</option>
 						    <option value="Dhakhil">Dhakhil</option>
 						    <option value="Vocational">Vocational</option>
@@ -342,7 +342,7 @@
 						 <table>
 						 	<tr>
 						 <td><label for="name">Name</label></td><td>
-						  <select class="form-control" id="degree_name" name="degree_name">				    
+						  <select class="form-control" id="degree_name" name="hscdegree_name">				    
 						     <option value="hsc">HSC</option>
 						    <option value="alim">Alim</option>
 						    <option value="Vocational">Vocational</option>

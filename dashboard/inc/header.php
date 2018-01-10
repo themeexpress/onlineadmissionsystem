@@ -21,9 +21,11 @@ $fm = new Format();
     <link rel="stylesheet" type="text/css" href="css/nav.css" media="screen" />
     <link href="css/table/demo_page.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css">
     
     <!-- BEGIN: load jquery -->
     <script src="js/jquery-1.6.4.min.js" type="text/javascript"></script>
+    <script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="js/jquery-ui/jquery.ui.core.min.js"></script>
     <script src="js/jquery-ui/jquery.ui.widget.min.js" type="text/javascript"></script>
     <script src="js/jquery-ui/jquery.ui.accordion.min.js" type="text/javascript"></script>
@@ -43,6 +45,13 @@ $fm = new Format();
         });
     </script>
     <script>tinymce.init({ selector:'textarea' });</script>
+    <script type="text/javascript" class="init">            
+
+        $(document).ready(function() {
+            $('#example').DataTable();
+        } );
+
+    </script>
 
 </head>
 <body>
@@ -97,12 +106,29 @@ $fm = new Format();
                 <div class="block" id="section-menu">
                     <ul class="section menu">
                         <li><a class="menuitem">Site Option</a>
+                            <?php $userID=Session::get('userId');
+                            $query = "select * from user where user_id='$userID' AND role='admin'";
+                            $result= $db->select($query);
+                            $row =mysqli_num_rows($result);
+                                if ($row>0) {
+                            ?>
                             <ul class="submenu">
-                                <li><a href="title.php">Your Profile</a></li>
-                                <li><a href="application.php">Application</a></li>
-                                <li><a href="application_photo.php">Application2</a></li>
-                                <li><a href="status.php">Status</a></li>                       
+                                <li><a href="#">Admin Profile</a></li>
+                                <li><a href="#">All Students</a></li>
+                                <li><a href="#">Result</a></li>
+                                <li><a href="#">Add Manager</a></li> 
+                                <li><a href="#">Seat Management</a></li> 
+                                <li><a href="#">Update OMR Mark</a></li>                      
                             </ul>
+                            <?php } else{?>
+                            <ul class="submenu">
+                                <li><a href="#">My Profile</a></li>
+                                <li><a href="#">Edit Profile</a></li>
+                                <li><a href="#">Admit Card</a></li>
+                                <li><a href="#">Result</a></li> 
+                                <li><a href="#">Waiting List</a></li>             
+                            </ul>
+                            <?php }?>
                         </li>						
                         
                     </ul>

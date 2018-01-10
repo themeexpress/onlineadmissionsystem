@@ -13,6 +13,10 @@ class Format
 	return $data;
 
 	}	
+	public function formatdate($date){
+		return date('F j,Y',strtotime($date));
+	}
+
 	
 }
 

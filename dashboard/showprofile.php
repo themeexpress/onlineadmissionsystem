@@ -5,7 +5,7 @@
         	 <?php $userId=Session::get('userId');?>
 		
             <div class="box round first grid">
-                <h2> Complete Application</h2>
+                <h2>Application Details</h2>
                 <div class="block">
                    <div class="container">
 				 	<div class="row">				 			 		

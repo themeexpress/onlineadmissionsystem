@@ -24,8 +24,8 @@
  		<a class="btn btn-default" style="padding: 0px;width: 40%;background: #1E90FF;color: #fff;" href="editprofile.php">Edit My Profile</a> 
 		<p style="margin: 50px"></p>
  		</div>
- 	</div>
- </div>
+ 			</div>
+ 			</div>
             
                         
                 </div>

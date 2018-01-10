@@ -59,7 +59,7 @@ $fm = new Format();
         <div class="grid_12 header-repeat">
             <div id="branding">
                 <div class="floatleft logo">
-                    <img src="img/logo.png" alt="OnlineAdmission" />
+                    <img src="img/bubtlogo.png" alt="OnlineAdmission" />
 				</div>
 				<div class="floatleft middle">
 					<h1>Online Admission System</h1>
@@ -109,26 +109,45 @@ $fm = new Format();
                             <?php $userID=Session::get('userId');
                             $query = "select * from user where user_id='$userID' AND role='admin'";
                             $result= $db->select($query);
-                            $row =mysqli_num_rows($result);
-                                if ($row>0) {
-                            ?>
+                            if(is_array($result) || is_object($result)){
+                            foreach ($result as $data) {
+                               $isadmin=$data['role'];
+                           if($isadmin=='admin'){
+
+                           ?>
+                           
                             <ul class="submenu">
                                 <li><a href="#">Admin Profile</a></li>
-                                <li><a href="#">All Students</a></li>
-                                <li><a href="#">Result</a></li>
-                                <li><a href="#">Add Manager</a></li> 
-                                <li><a href="#">Seat Management</a></li> 
-                                <li><a href="#">Update OMR Mark</a></li>                      
+                                <li><a href="admin.php">All Students</a></li>
+                                <li><a href="result.php">Result</a></li>
+                                <li><a href="addmanager.php">Add Manager</a></li> 
+                                <li><a href="seatplan.ph">Seat Management</a></li> 
+                                <li><a href="omr-mark.php">Update OMR Mark</a></li>                      
                             </ul>
-                            <?php } else{?>
-                            <ul class="submenu">
+                            <?php }}}?>
+                         
+                           <?php 
+                           $is_student='';
+                            $query = "select * from user where user_id='$userID' AND role='student'";
+                            $result= $db->select($query);
+                            if (is_array($result) || is_object($result)) {
+                                
+                            foreach ($result as $data) {
+                               $is_student=$data['role'];
+                            
+                            if($is_student=='student'){?>
+                                 <ul class="submenu">
                                 <li><a href="#">My Profile</a></li>
                                 <li><a href="#">Edit Profile</a></li>
                                 <li><a href="#">Admit Card</a></li>
                                 <li><a href="#">Result</a></li> 
                                 <li><a href="#">Waiting List</a></li>             
                             </ul>
-                            <?php }?>
+                           
+
+                           
+                            <?php } } } ?>
+                            
                         </li>						
                         
                     </ul>

@@ -38,7 +38,7 @@
                             <td><?php echo $students['gender'];?></td>
                             <td><?php echo $students['app_date'];?></td>
                             <td>
-                            <a href="#">Delete</span></a>
+                            <a href="#"><i class="fa fa-trash" aria-hidden="true"></i></span></a>
                             </td>
                             <td>
                             <a href="#">Approve</span></a>

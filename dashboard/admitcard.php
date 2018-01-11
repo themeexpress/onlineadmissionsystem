@@ -7,10 +7,9 @@ include "../lib/format.php";
 
 $db = new Database();
 $fm = new Format();
-echo $db->conect();
-
-// $con=mysqli_connect("localhost","root","","oas");
-// $q=mysqli_query($con,"select s_name from t_user_data where s_id='".$_SESSION['user']."'");
+//echo $db->conect();
+$userID=Session::get('userId');
+// $queryselect s_name from t_user_data where s_id='".$_SESSION['user']."'");
 // $n=  mysqli_fetch_assoc($q);
 // $stname= $n['s_name'];
 // $id=$_SESSION['user'];
@@ -41,8 +40,7 @@ echo $db->conect();
              }
         </script>
     </head>
-    <img src="../lib/Database.php"
-    <body style="background-image:url(./images/inbg.jpg) ">
+    <body style="background-image:url('img/inbg.jpg');">
       <form id="admincard" action="admincard.php" method="post">
             
           <div class="container-fluid">
@@ -51,18 +49,15 @@ echo $db->conect();
       <center>  <table class="table table-bordered" style="font-family: Verdana">
                 
                 <tr>
-                 <td style="width:3%;"><img src="./images/Logo-T.gif" width="50%"> </td>
-                 <td style="width:8%;"><center><font style="font-family:Arial Black; font-size:20px;">
-                    CENTURION UNIVERSITY OF TECHNOLOGY AND MANAGEMENT, BHUBANESWAR - 752050, ODISHA</font></center>
+                 <td style="width:3%;text-align: center;"><img src="img/bubtlogo.png" width="50%"> </td>
+                 <td style="width:8%;"><center><font style="font-family:Arial Black; font-size:20px;">BANGLADESH UNIVERSITY OF BUSINESS AND TECHNOLOGY (BUBT) </font></center>
                 
                 <center><font style="font-family:Verdana; font-size:18px;">
-                    Phone : (0674)2492496, Fax : (0674)2490480
-                    </font></center>
-                
-                <br>
-                <br>
+                  Phone: 01967169189, 01680050630 <br/>Email: info@bubt.edu.bd
+                    </font></center>                
+                <hr>              
                 <center><font style="font-family:Arial Black; font-size:20px;">
-                   CUEE ADMIT CARD (2016-17)</font></center>
+                  BUBT ADMIT CARD (2017-18)</font></center>
                 </td>
                     <td colspan="2" width="3%" >
                    <?php
@@ -88,7 +83,7 @@ echo $db->conect();
                  <tr>
                  <td style="width:4%;"> <font style="font-family: Verdana;">Date</font> </td>
                     <td style="width:8%;" colspan="3"><font style="font-family: Verdana; font-weight: bold">
-                        10th May 2016, Afternoon Session</font> </td>
+                        10th March 2018, Afternoon Session</font> </td>
                  </tr>
                  
                  <tr>
@@ -100,7 +95,7 @@ echo $db->conect();
                 <tr>
                     <td> <font style="font-family: Verdana;">Registration No. </font> </td>
                     <td colspan="3"><font style="font-family: Verdana; font-weight: bold">
-                     <?php echo $id ?></font> </td>
+                     <?php echo mt_rand(1000,10000);//$id ?></font> </td>
                 </tr>
                 
                 <tr>
@@ -112,12 +107,11 @@ echo $db->conect();
                  <tr>
                      <td style="width:4%;"> <font style="font-family: Verdana;">Exam Center  </font> </td>
                     <td style="width:8%;" colspan="3">
-                       <font style="font-family: Verdana; font-weight: bold"> Centurion Institute of Technology<br>
-                        At - Ramchandrapur<br>
-                        P.O - Jatni, Bhubaneswar<br>
-                        Dist: Khurda - 752050<br>
-                        Odisha, India<br>
-                        Phone: (0674)2492496<br>
+                       <font style="font-family: Verdana; font-weight: bold"> BANGLADESH UNIVERSITY OF BUSINESS AND TECHNOLOGY (BUBT)<br>
+                        At - Permanent Campus<br>
+                        Rupnagar, Mirpur-2 <br>
+                        Dhaka -1216<br>                       
+                        Phone: 01967169189<br>
                         </font>
                     </td>
                  </tr>
@@ -135,7 +129,7 @@ echo $db->conect();
             <p style="margin-left: 100px; margin-right: 100px; font-family: Verdana;">
                 1. This Admit Card must be presented for verification at the time of examination, along with at least one
                    original(not photocopied or scanned copy) and valid (not expired) photo identification card
-                   (e.g : Aadhaar Card, Voter ID).
+                   (e.g : Voter ID, Passport).
             </p>
             
             <p style="margin-left: 100px; margin-right: 100px; font-family: Verdana;">
@@ -144,16 +138,16 @@ echo $db->conect();
             </p>
             
             <p style="margin-left: 100px; margin-right: 100px; font-family: Verdana;">
-                3. Candidates should occupy their alloted seats <b>25 minutes before</b> the scheduled start of the examination.
+                3. Candidates should occupy their alloted seats <b><span style="color:red">25 minutes before</span></b> the scheduled start of the examination.
             </p>
             
             <p style="margin-left: 100px; margin-right: 100px; font-family: Verdana;">
-                4. Candidates will not be allowed to enter the examination hall <b>30 minutes</b>
+                4. Candidates will not be allowed to enter the examination hall <b><span style="color:red">30 minutes</span></b>
                 after the commencement of the examination.
             </p>
             
             <p style="margin-left: 100px; margin-right: 100px; font-family: Verdana;">
-                5. Mobile phones or any other Electronic gadgets are NOT ALLOWED inside the examination hall. There may not be any
+                5. Mobile phones or any other Electronic gadgets are <b><span style="color:red">NOT ALLOWED</span></b> inside the examination hall. There may not be any
                 facility for the safe-keeping of your gadget outside the hall, so it may be easier to leave it at your residence.
             </p>
             

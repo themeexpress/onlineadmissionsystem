@@ -63,6 +63,10 @@ Class Database{
 		die("Error :(".$this->link->errno.")".$this->link->error);
 	}
   }
+	public function conect()
+  {
+  	return "I M connected";
+  }
 
  
  

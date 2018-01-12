@@ -18,7 +18,7 @@
                             <img class="img-responsive uicon" style="max-width: 150px;  max-height: 101px; margin: auto;" src="img/admit.png">
                             <h3 class="text-center">Collect Admit Card</h3>
                             <p class="text-center">Collect Admit Card to seat in Test </p>
-                            <a class="btn btn-primary" style="padding: 0 15px;" href="admintcard.php">STATUS</a> 
+                            <a class="btn btn-primary" style="padding: 0 15px;" href="admitcard.php">ADMIT CARD</a> 
                          </div>
                          <div class="col-md-3 text-center">
                             <img class="img-responsive uicon" style="max-width: 150px;  max-height: 101px; margin: auto;" src="img/result.png">

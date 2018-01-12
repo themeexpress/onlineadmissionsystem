@@ -9,15 +9,12 @@ $db = new Database();
 $fm = new Format();
 //echo $db->conect();
 $userID=Session::get('userId');
-// $queryselect s_name from t_user_data where s_id='".$_SESSION['user']."'");
-// $n=  mysqli_fetch_assoc($q);
-// $stname= $n['s_name'];
-// $id=$_SESSION['user'];
-
-// $result = mysqli_query($con,"SELECT * FROM t_user WHERE s_id='".$_SESSION['user']."'");
-                    
-//                     while($row = mysqli_fetch_array($result))
-//                       {
+$query="SELECT application1.name,images.profile_pic,images.signature FROM application1,images WHERE application1.user_id=images.user_id AND application1.user_id='$userID'";
+$result=$db->select($query);
+while($row = mysqli_fetch_array($result)) {
+$stname= $row['name'];
+$pic=$row['profile_pic'];
+$signature=$row['signature'];
 ?>
 <html>
     <head>
@@ -60,23 +57,9 @@ $userID=Session::get('userId');
                   BUBT ADMIT CARD (2017-18)</font></center>
                 </td>
                     <td colspan="2" width="3%" >
-                   <?php
-                  
-                   // $picfile_path ='studentpic/';
-                    
-                   // $result1 = mysqli_query($con,"SELECT * FROM t_userdoc where s_id='".$_SESSION['user']."'");
-                        
-                    
-                    
-                    // while($row1 = mysqli_fetch_array($result1))
-                    //   {                  
-                    //     $picsrc=$picfile_path.$row1['s_pic'];
-                        
-                    //     echo "<img src='$picsrc.' class='img-thumbnail' width='180px' style='height:180px;'>";
-                    //     echo"<div>";
-                    //   }
-                   ?>
-                        </td>
+                        <img style="height:150px; width: 220px;" src="<?php echo $pic;?>" ><br/>
+                        <img style="height:50px; width: 220px;" src="<?php echo $signature;?>">
+                    </td>
                  </tr>       
                  
                  
@@ -116,7 +99,7 @@ $userID=Session::get('userId');
                     </td>
                  </tr>
                 <?php
-                //}
+                }
                 ?>
                  
                     </table>
@@ -153,7 +136,7 @@ $userID=Session::get('userId');
             
           </font>
           
-          <center><input type="button" id="print" class="toggle btn btn-primary" value="Print" onclick="printpage();"></center>
+          <center><input type="button" id="print" class="toggle btn btn-primary" value="Print Admit Card" onclick="printpage();"></center>
       </form>
     </body>
 </html>

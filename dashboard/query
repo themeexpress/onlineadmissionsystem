@@ -1,0 +1,8 @@
+SELECT application1.name,application1.father_name,application1.mother_name,application1.date_of_birth,application1.gender, application1.nationality,application1.maritalstatus,application1.first_choice,application1.second_choice,application1.third_choice,user.email,images.profile_pic,images.signature,ssc.degree_name,hsc.degree_name,hsc.roll, hsc.subject,hsc.passing_year,hsc.cgpa, hsc.board,hsc.institute FROM application1,images,user,ssc,hsc WHERE application1.user_id=images.user_id AND application1.user_id=user.user_id AND user.user_id=ssc.user_id AND ssc.user_id=hsc.user_id
+
+
+
+////////////
+SELECT application1.name,application1.father_name, present_address.careof,permanent_address.houseorvillage,present_address.houseorvillage FROM application1, present_address, permanent_address WHERE application1.user_id=permanent_address.user_id AND application1.user_id=present_address.user_id
+
+---------------------------------Works------------------------------

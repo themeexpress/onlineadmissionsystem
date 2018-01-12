@@ -93,8 +93,8 @@ $fm = new Format();
         </div>
         <div class="grid_12">
             <ul class="nav main">
-                <li class="ic-dashboard"><a href="admin.php"><span>Dashboard</span></a> </li>
-                <li class="ic-form-style"><a href="profile.php"><span>User Profile</span></a></li>
+                <li class="ic-dashboard"><a href="#"><span>Dashboard</span></a> </li>
+                <li class="ic-form-style"><a href="#"><span>User Profile</span></a></li>
 				<li class="ic-typography"><a href=""><span>Change Password</span></a></li>
 				<li class="ic-grid-tables"><a href=""><span>Inbox</span></a></li>
                 <li class="ic-charts"><a href=""><span>Visit Website</span></a></li>
@@ -138,11 +138,11 @@ $fm = new Format();
                             
                             if($is_student=='student'){?>
                                  <ul class="submenu">
-                                <li><a href="#">My Profile</a></li>
-                                <li><a href="#">Edit Profile</a></li>
-                                <li><a href="#">Admit Card</a></li>
-                                <li><a href="#">Result</a></li> 
-                                <li><a href="#">Waiting List</a></li>             
+                                <li><a href="showprofile.php">My Profile</a></li>
+                                <li><a href="editprofile.php">Edit Profile</a></li>
+                                <li><a href="admitcard.php">Admit Card</a></li>
+                                <li><a href="result.php">Result</a></li> 
+                                <li><a href="waiting.php">Waiting List</a></li>             
                             </ul>
                            
 

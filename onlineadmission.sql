@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 31, 2017 at 03:50 PM
+-- Generation Time: Jan 15, 2018 at 05:17 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.0.21
 
@@ -21,19 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `onlineadmission`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `address_meta`
---
-
-CREATE TABLE `address_meta` (
-  `address_id` int(11) NOT NULL,
-  `reg_id` int(11) NOT NULL,
-  `permanent_id` int(11) NOT NULL,
-  `present_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -62,23 +49,7 @@ CREATE TABLE `application1` (
 --
 
 INSERT INTO `application1` (`reg_id`, `user_id`, `name`, `father_name`, `mother_name`, `date_of_birth`, `app_date`, `gender`, `nationality`, `maritalstatus`, `first_choice`, `second_choice`, `third_choice`) VALUES
-(1, 8, 'habibur Rahman', 'Habibur Rahman', 'Habiba khatun', '1999-06-23 00:00:00', '2017-12-31 09:54:13', 'male', 'Bangladeshi', 'single', 'EEE', 'Civil', 'Mechanical'),
-(2, 8, 'habibur Rahman', 'Habibur Rahman', 'Habiba khatun', '1999-06-23 00:00:00', '2017-12-31 10:06:36', 'male', 'Bangladeshi', 'single', 'EEE', 'Civil', 'Mechanical'),
-(3, 8, 'Sanjoy Kumar', 'Sanjoy Father', 'Sonjay mother', '1997-06-06 00:00:00', '2017-12-31 11:20:38', 'male', 'Bangladeshi', 'married', 'Mechanical', 'EEE', 'Civil'),
-(4, 8, 'Sanjoy Kumar nath', 'Ariful Nath', 'dfdgf gsd', '2015-06-17 00:00:00', '2017-12-31 14:44:01', 'male', 'Bangladeshi', 'single', 'Civil', 'Textile', 'CSE');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `education_meta`
---
-
-CREATE TABLE `education_meta` (
-  `edu_id` int(11) NOT NULL,
-  `reg_id` int(11) NOT NULL,
-  `hsc_id` int(11) NOT NULL,
-  `ssc_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(4, 8, 'Sanjoy Kumar nath', 'Ariful Nath', 'Bijaya Rani', '2015-06-17 00:00:00', '2017-12-31 14:44:01', 'male', 'Bangladeshi', 'single', 'Civil', 'Textile', 'CSE');
 
 -- --------------------------------------------------------
 
@@ -103,9 +74,7 @@ CREATE TABLE `hsc` (
 --
 
 INSERT INTO `hsc` (`hsc_id`, `user_id`, `degree_name`, `roll`, `subject`, `passing_year`, `cgpa`, `board`, `institute`) VALUES
-(1, 8, 'SSC', 9876, 'arts', 2014, 3.9, 'dhaka', 'dei'),
-(2, 8, 'Vocational', 34567, 'arts', 2015, 3.6, 'BTEB', 'MKB'),
-(3, 8, 'hsc', 23466, 'science', 2015, 4.45, 'Dhaka', 'dfdfdfd');
+(1, 8, 'SSC', 9876, 'arts', 2014, 3.9, 'dhaka', 'dei');
 
 -- --------------------------------------------------------
 
@@ -121,6 +90,13 @@ CREATE TABLE `images` (
   `ssc_transcript` varchar(200) NOT NULL,
   `hsc_transcript` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `images`
+--
+
+INSERT INTO `images` (`img_id`, `user_id`, `profile_pic`, `signature`, `ssc_transcript`, `hsc_transcript`) VALUES
+(1, 8, 'uploads/ad8ab13fb4.jpg', 'uploads/signature.jpg', 'uploads/ad8ab13fb4.jpg ', 'uploads/ad8ab13fb4.jpg');
 
 -- --------------------------------------------------------
 
@@ -144,9 +120,6 @@ CREATE TABLE `permanent_address` (
 --
 
 INSERT INTO `permanent_address` (`permanent_id`, `user_id`, `careof`, `houseorvillage`, `post_office`, `police_station`, `zip_code`, `district`) VALUES
-(1, 8, 'dfdf', 'dfdfdf', 'dfdfd', 'dfdf', 2345, 'dfdf'),
-(2, 8, 'dfdf', 'dfdfdf', 'dfdfd', 'dfdf', 2345, 'dfdf'),
-(3, 8, 'ddd', 'ddd', 'fff', 'fff', 134, 'ttttt'),
 (4, 8, 'dfd dfd', 's sfdsd', 'sfddfsd', 'sfdfd', 2345, 'dcvdf');
 
 -- --------------------------------------------------------
@@ -171,9 +144,6 @@ CREATE TABLE `present_address` (
 --
 
 INSERT INTO `present_address` (`present_id`, `user_id`, `careof`, `houseorvillage`, `post_office`, `police_station`, `zip_code`, `district`) VALUES
-(1, 8, 'dfdf', 'dfdfdf', 'dfdfd', 'dfdf', 2345, 'dfdf'),
-(2, 8, 'dfdf', 'dfdfdf', 'dfdfd', 'dfdf', 2345, 'dfdf'),
-(3, 8, 'ddd', 'ddd', 'fff', 'fff', 134, 'ttttt'),
 (4, 8, 'dfd dfd', 's sfdsd', 'sfddfsd', 'sfdfd', 2345, 'dcvdf');
 
 -- --------------------------------------------------------
@@ -199,10 +169,7 @@ CREATE TABLE `ssc` (
 --
 
 INSERT INTO `ssc` (`ssc_id`, `user_id`, `degree_name`, `ssc_roll`, `ssc_cgpa`, `subject`, `passing_year`, `board`, `institute`) VALUES
-(1, 8, 'SSC', 123454, '3.9', 'arts', 2014, 'dhaka', 'dei'),
-(2, 8, 'SSC', 123454, '3.9', 'arts', 2014, 'dhaka', 'dei'),
-(3, 8, 'Vocational', 23456, '4', 'arts', 2015, 'BTEB', 'MKB'),
-(4, 8, 'hsc', 345677, '3.09', 'science', 2015, 'Dhaka', 'dfdfdfd');
+(1, 8, 'SSC', 123454, '3.9', 'arts', 2014, 'dhaka', 'dei');
 
 -- --------------------------------------------------------
 
@@ -224,31 +191,19 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`user_id`, `username`, `email`, `password`, `role`) VALUES
 (8, 'Mehedi Hasan', 'mehedi@gmail.com ', 'e10adc3949ba59abbe56e057f20f883e', 'student'),
-(9, 'Kamrul Islam', 'kamrul@gmail.com ', 'e10adc3949ba59abbe56e057f20f883e', 'student'),
+(9, 'Kamrul Islam', 'kamrul@gmail.com ', 'e10adc3949ba59abbe56e057f20f883e', 'admin'),
 (10, 'Aftab Kajol', 'aftab@gmail.com ', 'e10adc3949ba59abbe56e057f20f883e', 'student'),
-(11, 'habib', 'habib@gmail.com ', 'e10adc3949ba59abbe56e057f20f883e', 'student');
+(11, 'habib', 'habib@gmail.com ', 'e10adc3949ba59abbe56e057f20f883e', 'manager');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `address_meta`
---
-ALTER TABLE `address_meta`
-  ADD PRIMARY KEY (`address_id`);
-
---
 -- Indexes for table `application1`
 --
 ALTER TABLE `application1`
   ADD PRIMARY KEY (`reg_id`);
-
---
--- Indexes for table `education_meta`
---
-ALTER TABLE `education_meta`
-  ADD PRIMARY KEY (`edu_id`);
 
 --
 -- Indexes for table `hsc`
@@ -291,30 +246,20 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `address_meta`
---
-ALTER TABLE `address_meta`
-  MODIFY `address_id` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT for table `application1`
 --
 ALTER TABLE `application1`
   MODIFY `reg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT for table `education_meta`
---
-ALTER TABLE `education_meta`
-  MODIFY `edu_id` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT for table `hsc`
 --
 ALTER TABLE `hsc`
-  MODIFY `hsc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `hsc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `permanent_address`
 --
@@ -329,7 +274,7 @@ ALTER TABLE `present_address`
 -- AUTO_INCREMENT for table `ssc`
 --
 ALTER TABLE `ssc`
-  MODIFY `ssc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ssc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `user`
 --

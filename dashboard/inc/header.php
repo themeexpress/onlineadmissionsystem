@@ -138,6 +138,7 @@ $fm = new Format();
                             
                             if($is_student=='student'){?>
                                  <ul class="submenu">
+                                <li><a href="application.php">Apply Now</a></li>
                                 <li><a href="showprofile.php">My Profile</a></li>
                                 <li><a href="editprofile.php">Edit Profile</a></li>
                                 <li><a href="admitcard.php">Admit Card</a></li>

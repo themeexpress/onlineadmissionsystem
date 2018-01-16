@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 15, 2018 at 05:17 PM
+-- Generation Time: Jan 16, 2018 at 10:12 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.0.21
 
@@ -34,6 +34,7 @@ CREATE TABLE `application1` (
   `name` varchar(150) NOT NULL,
   `father_name` varchar(150) NOT NULL,
   `mother_name` varchar(100) NOT NULL,
+  `mobile_number` varchar(20) NOT NULL,
   `date_of_birth` datetime NOT NULL,
   `app_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `gender` varchar(55) NOT NULL,
@@ -48,8 +49,9 @@ CREATE TABLE `application1` (
 -- Dumping data for table `application1`
 --
 
-INSERT INTO `application1` (`reg_id`, `user_id`, `name`, `father_name`, `mother_name`, `date_of_birth`, `app_date`, `gender`, `nationality`, `maritalstatus`, `first_choice`, `second_choice`, `third_choice`) VALUES
-(4, 8, 'Sanjoy Kumar nath', 'Ariful Nath', 'Bijaya Rani', '2015-06-17 00:00:00', '2017-12-31 14:44:01', 'male', 'Bangladeshi', 'single', 'Civil', 'Textile', 'CSE');
+INSERT INTO `application1` (`reg_id`, `user_id`, `name`, `father_name`, `mother_name`, `mobile_number`, `date_of_birth`, `app_date`, `gender`, `nationality`, `maritalstatus`, `first_choice`, `second_choice`, `third_choice`) VALUES
+(4, 8, 'Sanjoy Kumar nath', 'Ariful Nath', 'Bijaya Rani', '0', '2015-06-17 00:00:00', '2017-12-31 14:44:01', 'male', 'Bangladeshi', 'single', 'Civil', 'Textile', 'CSE'),
+(5, 12, 'Arifur Rahman Khan', 'Habibur Rahman', 'Rabey Khanom', '01723276068', '2000-02-02 00:00:00', '2018-01-16 08:49:18', 'male', 'Bangladeshi', 'single', 'Mechanical', 'Civil', 'Textile');
 
 -- --------------------------------------------------------
 
@@ -60,21 +62,22 @@ INSERT INTO `application1` (`reg_id`, `user_id`, `name`, `father_name`, `mother_
 CREATE TABLE `hsc` (
   `hsc_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `degree_name` varchar(200) NOT NULL,
-  `roll` int(11) NOT NULL,
-  `subject` varchar(200) NOT NULL,
-  `passing_year` year(4) NOT NULL,
-  `cgpa` float NOT NULL,
-  `board` varchar(255) NOT NULL,
-  `institute` text NOT NULL
+  `hsc_degree_name` varchar(200) NOT NULL,
+  `hsc_roll` int(11) NOT NULL,
+  `hsc_subject` varchar(200) NOT NULL,
+  `hsc_passing_year` year(4) NOT NULL,
+  `hsc_cgpa` float NOT NULL,
+  `hsc_board` varchar(255) NOT NULL,
+  `hsc_institute` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `hsc`
 --
 
-INSERT INTO `hsc` (`hsc_id`, `user_id`, `degree_name`, `roll`, `subject`, `passing_year`, `cgpa`, `board`, `institute`) VALUES
-(1, 8, 'SSC', 9876, 'arts', 2014, 3.9, 'dhaka', 'dei');
+INSERT INTO `hsc` (`hsc_id`, `user_id`, `hsc_degree_name`, `hsc_roll`, `hsc_subject`, `hsc_passing_year`, `hsc_cgpa`, `hsc_board`, `hsc_institute`) VALUES
+(1, 8, 'SSC', 9876, 'arts', 2014, 3.9, 'dhaka', 'dei'),
+(2, 12, 'hsc', 532456, 'arts', 2014, 4.5, 'Dhaka', 'MPID');
 
 -- --------------------------------------------------------
 
@@ -96,7 +99,8 @@ CREATE TABLE `images` (
 --
 
 INSERT INTO `images` (`img_id`, `user_id`, `profile_pic`, `signature`, `ssc_transcript`, `hsc_transcript`) VALUES
-(1, 8, 'uploads/ad8ab13fb4.jpg', 'uploads/signature.jpg', 'uploads/ad8ab13fb4.jpg ', 'uploads/ad8ab13fb4.jpg');
+(1, 8, 'uploads/ad8ab13fb4.jpg', 'uploads/signature.jpg', 'uploads/ad8ab13fb4.jpg ', 'uploads/ad8ab13fb4.jpg'),
+(2, 12, 'uploads/19cc3ee3c2.jpg', 'uploads/19cc3ee3c2.jpg', 'uploads/19cc3ee3c2.jpg ', 'uploads/19cc3ee3c2.jpg');
 
 -- --------------------------------------------------------
 
@@ -120,7 +124,8 @@ CREATE TABLE `permanent_address` (
 --
 
 INSERT INTO `permanent_address` (`permanent_id`, `user_id`, `careof`, `houseorvillage`, `post_office`, `police_station`, `zip_code`, `district`) VALUES
-(4, 8, 'dfd dfd', 's sfdsd', 'sfddfsd', 'sfdfd', 2345, 'dcvdf');
+(4, 8, 'dfd dfd', 's sfdsd', 'sfddfsd', 'sfdfd', 2345, 'dcvdf'),
+(6, 12, 'arif', 'road5', 'mirpur', 'mirpur', 1216, 'dhaka');
 
 -- --------------------------------------------------------
 
@@ -144,7 +149,8 @@ CREATE TABLE `present_address` (
 --
 
 INSERT INTO `present_address` (`present_id`, `user_id`, `careof`, `houseorvillage`, `post_office`, `police_station`, `zip_code`, `district`) VALUES
-(4, 8, 'dfd dfd', 's sfdsd', 'sfddfsd', 'sfdfd', 2345, 'dcvdf');
+(4, 8, 'dfd dfd', 's sfdsd', 'sfddfsd', 'sfdfd', 2345, 'dcvdf'),
+(5, 12, 'arif', 'road5', 'mirpur', 'mirpur', 1216, 'dhaka');
 
 -- --------------------------------------------------------
 
@@ -155,21 +161,22 @@ INSERT INTO `present_address` (`present_id`, `user_id`, `careof`, `houseorvillag
 CREATE TABLE `ssc` (
   `ssc_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `degree_name` varchar(200) NOT NULL,
+  `ssc_degree_name` varchar(200) NOT NULL,
   `ssc_roll` int(11) NOT NULL,
   `ssc_cgpa` varchar(20) NOT NULL,
-  `subject` varchar(150) NOT NULL,
-  `passing_year` year(4) NOT NULL,
-  `board` varchar(200) NOT NULL,
-  `institute` varchar(255) NOT NULL
+  `ssc_subject` varchar(150) NOT NULL,
+  `ssc_passing_year` year(4) NOT NULL,
+  `ssc_board` varchar(200) NOT NULL,
+  `ssc_institute` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ssc`
 --
 
-INSERT INTO `ssc` (`ssc_id`, `user_id`, `degree_name`, `ssc_roll`, `ssc_cgpa`, `subject`, `passing_year`, `board`, `institute`) VALUES
-(1, 8, 'SSC', 123454, '3.9', 'arts', 2014, 'dhaka', 'dei');
+INSERT INTO `ssc` (`ssc_id`, `user_id`, `ssc_degree_name`, `ssc_roll`, `ssc_cgpa`, `ssc_subject`, `ssc_passing_year`, `ssc_board`, `ssc_institute`) VALUES
+(1, 8, 'SSC', 123454, '3.9', 'arts', 2014, 'dhaka', 'dei'),
+(2, 12, 'Dhakhil', 23456, '3.9', 'arts', 2012, 'bteb', 'mpi');
 
 -- --------------------------------------------------------
 
@@ -193,7 +200,8 @@ INSERT INTO `user` (`user_id`, `username`, `email`, `password`, `role`) VALUES
 (8, 'Mehedi Hasan', 'mehedi@gmail.com ', 'e10adc3949ba59abbe56e057f20f883e', 'student'),
 (9, 'Kamrul Islam', 'kamrul@gmail.com ', 'e10adc3949ba59abbe56e057f20f883e', 'admin'),
 (10, 'Aftab Kajol', 'aftab@gmail.com ', 'e10adc3949ba59abbe56e057f20f883e', 'student'),
-(11, 'habib', 'habib@gmail.com ', 'e10adc3949ba59abbe56e057f20f883e', 'manager');
+(11, 'habib', 'habib@gmail.com ', 'e10adc3949ba59abbe56e057f20f883e', 'manager'),
+(12, 'Arifur Rahman', 'arif@gmail.com ', 'e10adc3949ba59abbe56e057f20f883e', 'student');
 
 --
 -- Indexes for dumped tables
@@ -249,37 +257,37 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `application1`
 --
 ALTER TABLE `application1`
-  MODIFY `reg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `reg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `hsc`
 --
 ALTER TABLE `hsc`
-  MODIFY `hsc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `hsc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `permanent_address`
 --
 ALTER TABLE `permanent_address`
-  MODIFY `permanent_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `permanent_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `present_address`
 --
 ALTER TABLE `present_address`
-  MODIFY `present_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `present_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `ssc`
 --
 ALTER TABLE `ssc`
-  MODIFY `ssc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ssc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;COMMIT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

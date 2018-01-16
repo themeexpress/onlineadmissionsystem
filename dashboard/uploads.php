@@ -78,7 +78,7 @@
       $query = "INSERT INTO  images(user_id,profile_pic,signature,ssc_transcript,hsc_transcript) 
       VALUES('$userId','$profileupload','$signatureupload','$ssc_transcriptupload ','$hsc_transcriptupload')";
       $inserted_rows = $db->insert($query);
-      header('location :initprofile.php');
+      echo "<h1>Documents Uploaded Successfully</h1> ". "<a href='initprofile.php'> Show Your Profile</a>";
       }
      }
     ?>

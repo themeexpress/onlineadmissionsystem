@@ -3,7 +3,7 @@
 
         <div class="grid_10">
         	 <?php $userId=Session::get('userId');
-        	 $query="SELECT application1.name,application1.father_name,application1.mother_name, application1.date_of_birth,application1.gender, application1.nationality, application1.maritalstatus, application1.first_choice,application1.second_choice, application1.third_choice, present_address.careof,present_address.houseorvillage,present_address.post_office,present_address.police_station,present_address.zip_code, present_address.district,permanent_address.houseorvillage,permanent_address.post_office,permanent_address.police_station,permanent_address.zip_code, permanent_address.district,ssc.degree_name,ssc.ssc_roll,ssc.ssc_cgpa,ssc.subject,ssc.passing_year,ssc.board,ssc.institute,hsc.degree_name,hsc.roll, hsc.subject,hsc.passing_year,hsc.cgpa,hsc.board,hsc.institute,user.email,images.profile_pic,images.signature FROM application1, present_address, permanent_address,ssc,hsc,user,images WHERE application1.user_id=permanent_address.user_id AND application1.user_id=present_address.user_id AND application1.user_id=ssc.user_id AND application1.user_id=hsc.user_id AND application1.user_id=user.user_id AND application1.user_id=images.user_id AND application1.user_id='$userId'";
+        	 $query="SELECT application1.name,application1.father_name,application1.mother_name,application1.mobile_number, application1.date_of_birth,application1.gender, application1.nationality, application1.maritalstatus, application1.first_choice,application1.second_choice, application1.third_choice, present_address.careof,present_address.houseorvillage,present_address.post_office,present_address.police_station,present_address.zip_code, present_address.district,permanent_address.houseorvillage,permanent_address.post_office,permanent_address.police_station,permanent_address.zip_code, permanent_address.district,ssc.ssc_degree_name,ssc.ssc_roll,ssc.ssc_cgpa,ssc.ssc_subject,ssc.ssc_passing_year,ssc.ssc_board,ssc.ssc_institute,hsc.hsc_degree_name,hsc.hsc_roll, hsc.hsc_subject,hsc.hsc_passing_year,hsc.hsc_cgpa,hsc.hsc_board,hsc.hsc_institute,user.email,images.profile_pic,images.signature FROM application1, present_address, permanent_address,ssc,hsc,user,images WHERE application1.user_id=permanent_address.user_id AND application1.user_id=present_address.user_id AND application1.user_id=ssc.user_id AND application1.user_id=hsc.user_id AND application1.user_id=user.user_id AND application1.user_id=images.user_id AND application1.user_id='$userId'";
 			   $result=$db->select($query);
 				while($row = mysqli_fetch_array($result)) {				
 					$profile_pic=$row['profile_pic'];
@@ -45,6 +45,10 @@
 				       	<tr>
 				       		<th>Mother's Name </th>
 				       		<td colspan="3"><?php echo $row['mother_name']; ?></td>
+				       	</tr>
+				       	<tr>
+				       		<th>Mobile Number </th>
+				       		<td colspan="3"><?php echo $row['mobile_number']; ?></td>
 				       	</tr>				       					       
 				       	<tr>
 				       		<th>Date of Birth </th>
@@ -90,23 +94,23 @@
 				       	</tr>
 				       	<tr>
 				       		<th>SSC Detaisls </th><td>
-				       			<?php echo "<b>Degree Name: </b>". $row['degree_name'];echo "<br>";
+				       			<?php echo "<b>Degree Name: </b>". $row['ssc_degree_name'];echo "<br>";
 				       		echo "<b>SSC Roll: </b>". $row['ssc_roll']; echo "<br>";
 				       		echo "<b>SSC CGPA: </b>". $row['ssc_cgpa']; echo "<br>";
-				       		echo "<b>Group: </b>". $row['subject']; echo "<br>";
-				       		echo "<b>Board: </b>". $row['board']; echo "<br>";
-				       		echo "<b>Institute: </b>". $row['institute']; echo "<br>";
-				       		echo "<b>Passing Year: </b>". $row['passing_year']; 				       	
+				       		echo "<b>Group: </b>". $row['ssc_subject']; echo "<br>";
+				       		echo "<b>Board: </b>". $row['ssc_board']; echo "<br>";
+				       		echo "<b>Institute: </b>". $row['ssc_institute']; echo "<br>";
+				       		echo "<b>Passing Year: </b>". $row['ssc_passing_year']; 				       	
 				       		?>
 				       		</td>
 				       		<th>HSC Details </th><td>
-				       		<?php echo "<b>Degree Name: </b>". $row['degree_name'];echo "<br>";
-				       		echo "<b>HSC Roll: </b>". $row['roll']; echo "<br>";
-				       		echo "<b>HSC CGPA: </b>". $row['cgpa']; echo "<br>";
-				       		echo "<b>Group: </b>". $row['subject']; echo "<br>";
-				       		echo "<b>Board: </b>". $row['board']; echo "<br>";
-				       		echo "<b>Institute: </b>". $row['institute']; echo "<br>";
-				       		echo "<b>Passing Year: </b>". $row['passing_year'];
+				       		<?php echo "<b>Degree Name: </b>". $row['hsc_degree_name'];echo "<br>";
+				       		echo "<b>HSC Roll: </b>". $row['hsc_roll']; echo "<br>";
+				       		echo "<b>HSC CGPA: </b>". $row['hsc_cgpa']; echo "<br>";
+				       		echo "<b>Group: </b>". $row['hsc_subject']; echo "<br>";
+				       		echo "<b>Board: </b>". $row['hsc_board']; echo "<br>";
+				       		echo "<b>Institute: </b>". $row['hsc_institute']; echo "<br>";
+				       		echo "<b>Passing Year: </b>". $row['hsc_passing_year'];
 				       		
 				       		?></td>
 				       					       		

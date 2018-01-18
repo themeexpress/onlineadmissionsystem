@@ -1,22 +1,16 @@
 <div class="content_area"><!--content container area-->
     <div class="container tbpadding">
       <div class="row">
-        <div class="col-md-4">  
-           <div class="row">
-            <div class="col-md-3"><i class="fa fa-telegram" aria-hidden="true"></i></div>
-            <div class="col-md-9"><h2>How to Apply</h2>
+        <div class="col-md-4 text-center">            
+           
+           <h2>How to Apply</h2>
            <ul>
              <li>Registration</li>
              <li>Login</li>
              <li>Apply Online</li>
              <li>Confirm Payment</li>             
            </ul>
-
-            <a href="registration.php"><button class="btn btn-default">Register</button></a> 
-            </div>
-
-          </div>
-
+            <a href="registration.php"><button class="btn btn-default">Register</button></a>
         </div>
         <div class="col-md-4"> 
           <div class="row">

@@ -21,25 +21,6 @@
     <![endif]-->
     <script type="text/javascript">
 
-//   var password = document.getElementById("password")
-//   , confirm_password = document.getElementById("confirm_password");
-
-// function validatePassword(){
-//   if(password.value != confirm_password.value) {
-//     confirm_password.setCustomValidity("Passwords Don't Match");
-//   } else {
-//     confirm_password.setCustomValidity('');
-//   }
-// }
-
-// password.onchange = validatePassword();
-// confirm_password.onkeyup = validatePassword();
-
-function test(){
-  //if(getElementById('#password').lenght>6)
- 
-    alert("al least 6");
-//}
  
 </script>  
 </head>
@@ -63,13 +44,12 @@ function test(){
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
      
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="http://localhost/Onlineadminssionsystem/">Home</a></li>
+        <li><a href="index.php">Home</a></li>
         <li><a href="aboutus.php">About Us</a></li>
         <li><a href="academic.php">Academic</a></li>
-        <li><a href="adminssion.php">Admission</a></li>
-        <li><a href="./dashboard/index.php"><i class="fa fa-user sicon" aria-hidden="true"></i>Sign In</a></li>
-         <li><a href="./dashboard/login.php"><i class="fa fa-sign-in sicon" aria-hidden="true"></i>Sign Up</a></li>
-        <li><a href="#">Contact Us</a></li>
+        <li><a href="adminssion.php">Admission</a></li>        
+         <li><a href="./dashboard/login.php"><i class="fa fa-sign-in sicon" aria-hidden="true"></i>Sign Up / Sign In</a></li>
+        <li><a href="contact.php">Contact Us</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

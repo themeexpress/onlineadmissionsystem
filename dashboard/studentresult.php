@@ -9,7 +9,6 @@ $db = new Database();
 $fm = new Format();
 //echo $db->conect();
 ?>
-
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -95,8 +94,7 @@ $fm = new Format();
                                 else  {
                                 	$sscmark=0;
                                 }
-                                $totalmark=$sscmark+$sscmark+$mark;
-                                
+                                $totalmark=$sscmark+$sscmark+$mark;                               
 
 
                         ?>
@@ -115,7 +113,6 @@ $fm = new Format();
                         
                     </table>
                      <input type="button" id="print" style="margin-top: 30px;" class="toggle btn btn-primary" value="Print Admit Card" onclick="printpage();"></center>
-
 
                       </div>
       

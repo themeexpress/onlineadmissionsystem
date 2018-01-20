@@ -13,16 +13,19 @@
                             <p class="text-center">your application status is: </p>
                           
                             <?php $userID=Session::get('userId');
-                            $query="select user_id from application1 where user_id='$userID'";
-                            $res=$db->select($query);
-                            if($res->num_rows>0){
-
+                            $query="select * from application1 where user_id='$userID'";
+                            $res=$db->select($query);                          
+                          
+                          if ($res!=false) {
                             ?>
-                            <p style="color:green;">You have Already Applied</p>
+                             <p style="color:green;">You have Already Applied</p>
                             <a class="btn btn-info disabled" style="padding: 0 15px;" href="application.php">Apply Now</a>
-                            <?php } else{?>  
-                            <a class="btn btn-primary" class="btn btn-info disabled" style="padding: 0 15px;" href="application.php">Apply Now</a>
-                            <?php } ?>                       
+                           <?php } else{ ?>                            
+                             <a class="btn btn-primary" style="padding: 0 15px;" href="application.php">Apply Now</a>                          
+                            
+                            <?php }?>  
+                            
+                                                  
 
                          </div>
                          <div class="col-md-3 text-center">

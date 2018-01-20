@@ -28,23 +28,23 @@
                             //All Student Query
                         $query="SELECT * FROM application1";
                         $result= $db->select($query);
-                       while ($row=$result->fetch_assoc()) {
-                                                                           
+                        foreach ($result as $students) {
+                                                   
                         ?>
                         <tbody>
                         <tr>
-                            <td style="text-transform:capitalize;"><?php echo $row['name'];?></td>
-                            <td><?php echo $fm->formatdate($row['date_of_birth']);?></td>
-                            <td><?php echo $row['gender'];?></td>
-                            <td><?php echo $row['app_date'];?></td>
+                            <td style="text-transform:capitalize;"><?php echo $students['name'];?></td>
+                            <td><?php echo $fm->formatdate($students['date_of_birth']);?></td>
+                            <td><?php echo $students['gender'];?></td>
+                            <td><?php echo $students['app_date'];?></td>
                             <td>
-                            <a href="enteromrmark.php?regid=<?php echo $row['reg_id']; ?>">OMR Mark</a>
+                            <a href="enteromrmark.php?id=<?php echo $students['reg_id']; ?>">OMR Mark</a>
                             </td>
                             <td>
-                            <a href="approvestudent.php?id=<?php echo $row['reg_id']; ?>">Approve</span></a>
+                            <a href="approvestudent.php?id=<?php echo $students['user_id']; ?>">Approve</span></a>
                             </td>
                             <td>
-                            <a href="deletestudent.php?id=<?php echo $row['user_id']; ?>">Delete</span></a>
+                            <a href="deletestudent.php?id=<?php echo $students['user_id']; ?>">Delete</span></a>
                             </td>
                         </tr>
                         </tbody>

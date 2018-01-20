@@ -13,7 +13,7 @@ $fm = new Format();
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title> Admin</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="css/text.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="css/grid.css" media="screen" />
@@ -59,8 +59,9 @@ $fm = new Format();
     <div class="container_12">
         <div class="grid_12 header-repeat">
             <div id="branding">
+                <div class="container">
                 <div class="floatleft logo">
-                    <img src="img/bubtlogo.png" alt="OnlineAdmission" />
+                    <img src="img/logo.png" alt="OnlineAdmission" />
 				</div>
 				<div class="floatleft middle">
 					<h1>Online Admission System</h1>
@@ -85,8 +86,9 @@ $fm = new Format();
                         </ul>
                     </div>
                 </div>
-                <div class="clear">
+                <div class="clear"></div>
                 </div>
+
             </div>
         </div>
         <div class="clear">
@@ -122,8 +124,8 @@ $fm = new Format();
                                 <li><a href="admin.php">All Students</a></li>
                                 <li><a href="result.php">Result</a></li>
                                 <li><a href="addmanager.php">Add Manager</a></li> 
-                                <li><a href="seatplan.ph">Seat Management</a></li> 
-                                <li><a href="omr-mark.php">Update OMR Mark</a></li>                      
+                                <li><a href="#">Seat Management</a></li> 
+                                <li><a href="enteromrmark.php">Update OMR Mark</a></li>                      
                             </ul>
                             <?php }}}?>
                          
@@ -137,12 +139,11 @@ $fm = new Format();
                                $is_student=$data['role'];
                             
                             if($is_student=='student'){?>
-                                 <ul class="submenu">
-                                <li><a href="application.php">Apply Now</a></li>
+                                 <ul class="submenu">                                
                                 <li><a href="showprofile.php">My Profile</a></li>
                                 <li><a href="editprofile.php">Edit Profile</a></li>
                                 <li><a href="admitcard.php">Admit Card</a></li>
-                                <li><a href="result.php">Result</a></li> 
+                                <li><a href="studentresult.php">Result</a></li> 
                                 <li><a href="waiting.php">Waiting List</a></li>             
                             </ul>
                            

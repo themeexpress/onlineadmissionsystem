@@ -89,7 +89,7 @@
 			$presentresult=$db->update($present_query);
 			$sscresult=$db->update($ssc_query);
 			$hscresult=$db->update($hsc_query);
-			echo "Data successfully submited "."<a href='uploads.php'>Next upload images </a>";
+			echo "Data successfully submited "."<a href='showprofile.php'>Show Profile </a>";
 			
 	    }
 

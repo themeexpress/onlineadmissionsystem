@@ -20,23 +20,19 @@
       $permited  = array('jpg', 'jpeg', 'png', 'gif');
       $file_name = $_FILES['profile_pic']['name'];
       $file_size = $_FILES['profile_pic']['size'];
-      $file_temp = $_FILES['profile_pic']['tmp_name'];
+      $file_temp = $_FILES['profile_pic']['tmp_name'];     
 
-       $div = explode('.', $file_name);
-       $file_ext = strtolower(end($div));
-       $unique_image = substr(md5(time()), 0, 10).'.'.$file_ext;
-       $profileupload = "uploads/".$unique_image;
-
+      $profileupload = "uploads/".$file_name;
+      $profiletype = strtolower(pathinfo($profileupload,PATHINFO_EXTENSION));
 
       //signature
       $signature=$_FILES['signature']['name'];
       $signaturesize=$_FILES['signature']['size'];
       $signaturtemp=$_FILES['signature']['tmp_name'];     
 
-      $div1 = explode('.', $signature);
-      $file_ext1 = strtolower(end($div1));
-      $unique_image1 = substr(md5(time()), 0, 10).'.'.$file_ext1;
-      $signatureupload = "uploads/".$unique_image1;
+     
+      $signatureupload = "uploads/".$signature;
+      $signaturetype = strtolower(pathinfo($signatureupload,PATHINFO_EXTENSION));
 
       //SSC transcript
 
@@ -44,10 +40,9 @@
       $ssc_transcriptsize=$_FILES['ssc_transcript']['size'];
       $ssc_transcripttemp=$_FILES['ssc_transcript']['tmp_name'];     
 
-      $div2= explode('.', $ssc_transcript);
-      $file_ext2 = strtolower(end($div2));
-      $unique_image2 = substr(md5(time()), 0, 10).'.'.$file_ext2;
-      $ssc_transcriptupload = "uploads/".$unique_image2;
+      
+      $ssc_transcriptupload = "uploads/".$ssc_transcript;
+      $ssc_transcripttype = strtolower(pathinfo($ssc_transcriptupload,PATHINFO_EXTENSION));
 
       //HSC Transcript
 
@@ -55,10 +50,9 @@
       $hsc_transcriptsize=$_FILES['hsc_transcript']['size'];
       $hsc_transcripttemp=$_FILES['hsc_transcript']['tmp_name'];     
 
-      $div3= explode('.', $hsc_transcript);
-      $file_ext3 = strtolower(end($div3));
-      $unique_image3 = substr(md5(time()), 0, 10).'.'.$file_ext3;
-      $hsc_transcriptupload = "uploads/".$unique_image3;
+      $hsc_transcriptupload = "uploads/".$hsc_transcript;
+      $hsc_transcripttype = strtolower(pathinfo($hsc_transcriptupload,PATHINFO_EXTENSION));
+
 
 
       if (empty($file_name)||empty($signature)||empty($ssc_transcript)||empty($hsc_transcript)) {
@@ -66,7 +60,7 @@
       }elseif ($file_size>1048567 || $signaturesize>1048567 || $ssc_transcriptsize>1048567 || $hsc_transcriptsize>1048567){
        echo "<span style='color:red;'>Image Size should be less then 1MB!
        </span>";
-      } elseif (in_array($file_ext, $permited) === false || in_array($file_ext1 , $permited)=== false || in_array($file_ext2 , $permited)=== false || in_array($file_ext3 , $permited)=== false){
+      } elseif (in_array($profiletype, $permited) === false || in_array($signaturetype , $permited)=== false || in_array($ssc_transcripttype , $permited)=== false || in_array($hsc_transcripttype  , $permited)=== false){
        echo "<span style='color:red;'>You can upload only:-".implode(', ', $permited)."</span>";
       } else{
       move_uploaded_file($file_temp, $profileupload);

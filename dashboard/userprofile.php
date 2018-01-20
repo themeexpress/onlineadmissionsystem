@@ -11,7 +11,18 @@
                             <img class="img-responsive" style="max-width: 150px;  max-height: 101px; margin: auto;" src="img/application.png">
                             <h3 class="text-center">Application Status</h3>
                             <p class="text-center">your application status is: </p>
-                            <a class="btn btn-primary" style="padding: 0 15px;" href="status.php">STATUS</a>                           
+                          
+                            <?php $userID=Session::get('userId');
+                            $query="select user_id from application1 where user_id='$userID'";
+                            $res=$db->select($query);
+                            if($res->num_rows>0){
+
+                            ?>
+                            <p style="color:green;">You have Already Applied</p>
+                            <a class="btn btn-info disabled" style="padding: 0 15px;" href="application.php">Apply Now</a>
+                            <?php } else{?>  
+                            <a class="btn btn-primary" class="btn btn-info disabled" style="padding: 0 15px;" href="application.php">Apply Now</a>
+                            <?php } ?>                       
 
                          </div>
                          <div class="col-md-3 text-center">

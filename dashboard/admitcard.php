@@ -46,7 +46,7 @@ $signature=$row['signature'];
       <center>  <table class="table table-bordered" style="font-family: Verdana">
                 
                 <tr>
-                 <td style="width:3%;text-align: center;"><img src="img/bubtlogo.png" width="50%"> </td>
+                 <td style="width:3%;text-align: center;"><img src="img/logo.png" width="50%" style="margin-top: 60px;"> </td>
                  <td style="width:8%;"><center><font style="font-family:Arial Black; font-size:20px;">BANGLADESH UNIVERSITY OF BUSINESS AND TECHNOLOGY (BUBT) </font></center>
                 
                 <center><font style="font-family:Verdana; font-size:18px;">

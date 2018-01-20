@@ -125,7 +125,9 @@ $fm = new Format();
                                 <li><a href="result.php">Result</a></li>
                                 <li><a href="addmanager.php">Add Manager</a></li> 
                                 <li><a href="#">Seat Management</a></li> 
-                                <li><a href="enteromrmark.php">Update OMR Mark</a></li>                      
+                                <li><a href="enteromrmark.php">Update OMR Mark</a></li>
+                                <li><a href="report.php">Total Report</a></li>
+
                             </ul>
                             <?php }}}?>
                          

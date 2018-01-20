@@ -22,7 +22,7 @@ include '../lib/Database.php';
 <body>
 	<div class="container-fluid">
 		<div class="row">
-			<img class="img-responsive" src="img/banner.png">
+			<a href="../index.php"><img class="img-responsive" src="img/banner.png"></a>
 		</div>
 	
 

@@ -1,7 +1,10 @@
 
 <?php include('header.php');?>
   </div>
-  <div class="container">   
+  <div class="container">
+  <div class="news" style="background:#E2B024; color: white;font-size: 18px;padding:2px;margin:0px;">
+     <marquee direction="left"><p>News:&nbsp;  &nbsp; <span style="color:#fff">>>>></span>> Admission Last Date February 25, 2018   &nbsp;  &nbsp;  &nbsp;<span style="color:#fff">>>>></span>> Orientation Class March 5, 2018</p></marquee>
+     </div>   
       <!-- Carousel
     ================================================== -->
     <?php include('homeslider.php');?>    

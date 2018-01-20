@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="footerlast">
-      <p class="lastfooter"> &copy; copyrigh 2018 Online Admission System. All rights reserved</p>
+      <p class="lastfooter text-center"> &copy; copyrigh 2018 Online Admission System. All rights reserved</p>
     </div>
   </footer> 
 

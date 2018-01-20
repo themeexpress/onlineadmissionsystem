@@ -46,10 +46,10 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="index.php">Home</a></li>
         <li><a href="aboutus.php">About Us</a></li>
-        <li><a href="academic.php">Academic</a></li>
-        <li><a href="adminssion.php">Admission</a></li>        
+        <li><a href="academic.php">Academic</a></li>    
          <li><a href="./dashboard/login.php"><i class="fa fa-sign-in sicon" aria-hidden="true"></i>Sign Up / Sign In</a></li>
         <li><a href="contact.php">Contact Us</a></li>
+        <li><a href="./dashboard/adminlogin.php"">Admin</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

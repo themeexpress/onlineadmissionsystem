@@ -30,6 +30,7 @@
                         $query="SELECT application1.name,application1.mark, application1.date_of_birth,ssc.ssc_roll,ssc.ssc_cgpa,hsc.hsc_roll,hsc.hsc_cgpa FROM application1, ssc, hsc WHERE application1.user_id= ssc.user_id AND application1.user_id=hsc.user_id";
                         $result= $db->select($query);
                        while ($row=$result->fetch_assoc()) {
+
                        			$mark=$row['mark'];
 
                                 $ssc_cgpa=$row['ssc_cgpa'];
@@ -108,5 +109,3 @@
    <?php include "inc/footer.php";?>
 
 
-
-?>

@@ -15,7 +15,7 @@
                    <div class="container">
 				 	<div class="row">				 			 		
 				 		<div class="col-md-2">			     
-							<img class="img-responsive" style="border: 1px solid #ddd;padding: 10px;" src="img/bubtlogo.png" alt="">			 
+							<img class="img-responsive" style="border: 1px solid #ddd;padding: 10px;" src="img/logo.png" alt="">			 
 				 		</div>
 				 		<div class="col-md-6">				     
 						<h2 class="text-center">BANGLADESH UNIVERSITY OF BUSINESS AND TECHNOLOGY (BUBT)</h2>

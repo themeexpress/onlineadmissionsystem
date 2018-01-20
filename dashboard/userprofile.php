@@ -35,7 +35,7 @@
                             <img class="img-responsive uicon" style="max-width: 150px;  max-height: 101px; margin: auto;" src="img/result.png">
                             <h3 class="text-center">Admission Result</h3>
                             <p class="text-center">Admission Merit List and Wating Lists </p>
-                             <a class="btn btn-primary" style="padding: 0 15px;" href="result.php">STATUS</a> 
+                             <a class="btn btn-primary" style="padding: 0 15px;" href="studentresult.php">RESULT</a> 
                          </div>
                      </div>   
                     </div>

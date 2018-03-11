@@ -10,8 +10,7 @@ Class Database{
 	public $host   = DB_HOST;
 	public $user   = DB_USER;
 	public $pass   = DB_PASS;
-	public $dbname = DB_NAME;
-	
+	public $dbname = DB_NAME;	
 	
 	public $link;
 	public $error;
@@ -50,10 +49,13 @@ Class Database{
   
     // Update data
   	public function update($query){
-	$update_row = $this->link->query($query) or die($this->link->error.__LINE__);
-	if(!$update_row){		
-		die("Error :(".$this->link->errno.")".$this->link->error);
-	}
+	$result = $this->link->query($query) or die($this->link->error.__LINE__);
+    if ($result=== FALSE) {
+      die($this->link->error);
+    }else{
+      return $result;
+    }
+  
   }
   
   // Delete data
